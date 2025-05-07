@@ -1,6 +1,10 @@
+import { Meteors } from "@/components/magicui/meteors";
 
 export default function Home() {
   return (
-   <div></div>
+   <div >
+    <Meteors />
+ 
+   </div>
   );
 }
