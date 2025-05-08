@@ -1,3 +1,4 @@
+"use client";
 import {
   Share,
   NotebookPen,
