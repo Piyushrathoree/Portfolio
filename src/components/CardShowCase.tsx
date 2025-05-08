@@ -10,9 +10,13 @@ import {
 import Link from "next/link";
 import React from "react";
 import { Button } from "./ui/button";
+import dynamic from "next/dynamic";
 
 import { Particles } from "./magicui/particles";
-import { Meteors } from "./magicui/meteors";
+const Meteors = dynamic(
+  () => import("./magicui/meteors").then(mod => mod.Meteors),
+  { ssr: false, loading: () => <div /> }
+);
 
 const CardShowCase = () => {
   return (

@@ -10,8 +10,11 @@ export default function CardDemo() {
       <video
         src="/Project-1.mp4"
         autoPlay
-        muted
         loop
+        muted
+        playsInline
+          poster="/Project-1.mp4"
+        preload="none"
         className="rounded-lg object-cover border border-neutral-500  w-full"
       />
 
