@@ -27,7 +27,7 @@ const DEFAULT_MAGNIFICATION = 60;
 const DEFAULT_DISTANCE = 140;
 
 const dockVariants = cva(
-  "supports-backdrop-blur:bg-white/10 supports-backdrop-blur:dark:bg-black/10 mx-auto mt-8 flex h-[58px] w-max items-center justify-center gap-2 rounded-2xl border p-2 backdrop-blur-md",
+  "supports-backdrop-blur:bg-white/10 supports-backdrop-blur:dark:bg-black/10 mx-auto mt-8 flex h-[58px] w-max items-center justify-center gap-2 rounded-2xl border p-2 backdrop-blur-md"
 );
 
 const Dock = React.forwardRef<HTMLDivElement, DockProps>(
@@ -41,7 +41,7 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
       direction = "middle",
       ...props
     },
-    ref,
+    ref
   ) => {
     const mouseX = useMotionValue(Infinity);
 
@@ -49,11 +49,11 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
       return React.Children.map(children, (child) => {
         if (React.isValidElement(child) && child.type === DockIcon) {
           return React.cloneElement(child, {
-            ...child.props,
             mouseX: mouseX,
             size: iconSize,
             magnification: iconMagnification,
             distance: iconDistance,
+            ...(child.props as DockIconProps),
           });
         }
         return child;
@@ -75,7 +75,7 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
         {renderChildren()}
       </motion.div>
     );
-  },
+  }
 );
 
 Dock.displayName = "Dock";
@@ -90,7 +90,21 @@ export interface DockIconProps
   children?: React.ReactNode;
   props?: PropsWithChildren;
 }
+import { useEffect, useState } from "react";
 
+export function useIsMdUp() {
+  const [isMdUp, setIsMdUp] = useState(true);
+
+  useEffect(() => {
+    const check = () =>
+      setIsMdUp(window.matchMedia("(min-width: 768px)").matches);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
+  return isMdUp;
+}
 const DockIcon = ({
   size = DEFAULT_SIZE,
   magnification = DEFAULT_MAGNIFICATION,
@@ -100,6 +114,8 @@ const DockIcon = ({
   children,
   ...props
 }: DockIconProps) => {
+  const isMdUp = useIsMdUp();
+
   const ref = useRef<HTMLDivElement>(null);
   const padding = Math.max(6, size * 0.2);
   const defaultMouseX = useMotionValue(Infinity);
@@ -112,7 +128,7 @@ const DockIcon = ({
   const sizeTransform = useTransform(
     distanceCalc,
     [-distance, 0, distance],
-    [size, magnification, size],
+    [size, magnification, size]
   );
 
   const scaleSize = useSpring(sizeTransform, {
@@ -121,13 +137,16 @@ const DockIcon = ({
     damping: 12,
   });
 
+  const width = isMdUp ? scaleSize : size;
+  const height = isMdUp ? scaleSize : size;
+
   return (
     <motion.div
       ref={ref}
-      style={{ width: scaleSize, height: scaleSize, padding }}
+      style={{ width, height, padding }}
       className={cn(
         "flex aspect-square cursor-pointer items-center justify-center rounded-full",
-        className,
+        className
       )}
       {...props}
     >
