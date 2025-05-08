@@ -1,0 +1,57 @@
+"use client";
+
+import { HomeIcon, Mail, PencilIcon, User } from "lucide-react";
+import Link from "next/link";
+import React from "react";
+
+import { buttonVariants } from "@/components/ui/button";
+
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { cn } from "@/lib/utils";
+import { Dock, DockIcon } from "@/components/magicui/dock";
+
+export type IconProps = React.HTMLAttributes<SVGElement>;
+
+const DATA = {
+  navbar: [
+    { href: "/", icon: HomeIcon, label: "Home" },
+    { href: "/projects", icon: PencilIcon, label: "projects" },
+    { href: "/about", icon: User, label: "about" },
+    { href: "/contact", icon: Mail, label: "contact" },
+  ],
+};
+
+export function NavDock() {
+  return (
+    <TooltipProvider>
+      <Dock direction="middle" className=" border-neutral-800">
+        {DATA.navbar.map((item) => (
+          <DockIcon key={item.label}>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Link
+                  href={item.href}
+                  aria-label={item.label}
+                  className={cn(
+                    buttonVariants({ variant: "ghost", size: "icon" }),
+                    "size-12 rounded-full text-neutral-500"
+                  )}
+                >
+                  <item.icon className="size-4" />
+                </Link>
+              </TooltipTrigger>
+              <TooltipContent className="bg-neutral-900 text-neutral-50">
+                <p>{item.label}</p>
+              </TooltipContent>
+            </Tooltip>
+          </DockIcon>
+        ))}
+      </Dock>
+    </TooltipProvider>
+  );
+}
