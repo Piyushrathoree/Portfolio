@@ -18,7 +18,7 @@ export interface ContainerTextFlipProps {
   animationDuration?: number;
 }
 
-export function ContainerTextFlip({
+export function  ContainerTextFlip({
   words = ["better", "modern", "beautiful", "awesome"],
   interval = 3000,
   className,
@@ -33,7 +33,7 @@ export function ContainerTextFlip({
   const updateWidthForWord = () => {
     if (textRef.current) {
       // Add some padding to the text width (30px on each side)
-      // @ts-expect-error
+      // @ts-expect-error - textRef.current is not null
       const textWidth = textRef.current.scrollWidth + 30;
       setWidth(textWidth);
     }
