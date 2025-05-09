@@ -12,7 +12,7 @@ import { ContainerTextFlip } from "@/components/ui/container-text-flip";
 
 export default function Home() {
   return (
-    <div className="min-h-screen  overflow-hidden">
+    <div className="min-h-screen w-full overflow-hidden">
       <Meteors number={40} className="absolute inset-0 " />
 
       <div className="flex mt-24 md:mt-32 flex-col gap-4 w-full items-start  justify-center px-5 ">
