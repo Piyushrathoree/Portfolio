@@ -1,6 +1,6 @@
 "use client";
 
-import { HomeIcon, Mail, PencilIcon, User } from "lucide-react";
+import { Code, HomeIcon, Mail, PencilIcon, User } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
@@ -23,6 +23,7 @@ const DATA = {
     { href: "/projects", icon: PencilIcon, label: "projects" },
     { href: "/about", icon: User, label: "about" },
     { href: "/contact", icon: Mail, label: "contact" },
+    { href: "/skills", icon: Code, label: "skills" },
   ],
 };
 

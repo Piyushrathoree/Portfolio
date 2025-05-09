@@ -1,6 +1,8 @@
+import { GridPattern } from "@/components/magicui/grid-pattern";
 import { Meteors } from "@/components/magicui/meteors";
 import { Particles } from "@/components/magicui/particles";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import {
   GithubIcon,
   Link2Icon,
@@ -39,6 +41,25 @@ const page = () => {
         </div>
       </div>
       <div className="w-full max-md:w-[98%] h-[90%] top-26 md:top-36   rounded-xl shadow shadow-neutral-500  item-start  justify-center pt-10 relative">
+        <GridPattern
+          width={30}
+          height={30}
+          x={-1}
+          y={-1}
+          className={cn(
+            "[mask-image:linear-gradient(to_bottom_right,white,transparent)] md:hidden "
+          )}
+        />
+        <GridPattern
+          width={50}
+          height={50}
+          x={-1}
+          y={-1}
+          strokeDasharray={"4 2"}
+          className={cn(
+            "[mask-image:radial-gradient(600px_circle_at_center,white,transparent)] hidden md:block w-full h-full"
+          )}
+        />
         <div className="absolute md:left-22 left-5 text-lg  text-neutral-300 flex gap-2 items-center  ">
           Send Me A Mail{" "}
           <span>
@@ -48,14 +69,14 @@ const page = () => {
         <div className="w-[80%] max-md:w-[90%] max-md:h-[47%] h-[42%] bg-neutral-900 rounded-lg mt-10 py-5 px-5 flex md:ml-22 mx-5 relative shadow shadow-neutral-700">
           <Particles className="absolute inset-0 z-0 " quantity={50} refresh />{" "}
           <form className="flex flex-col gap-10 w-[90%] h-full justify-center">
-            <div className="flex gap-5 max-md:flex-col">
+            <div className="flex gap-5 flex-col">
               <div className="flex flex-col text-neutral-400 ">
                 <label htmlFor="name " className="selection:bg-none">
                   Name
                 </label>
                 <input
                   type="text"
-                  className="bg-neutral-800 h-10 rounded-md outline-none text-neutral-400 shadow shadow-neutral-700 px-2 w-52 "
+                  className="bg-neutral-800 h-10 rounded-md outline-none text-neutral-400 shadow shadow-neutral-700 px-2 w-52 md:w-72  "
                   id="name"
                 />
               </div>
@@ -64,7 +85,7 @@ const page = () => {
 
                 <input
                   type="text"
-                  className="bg-neutral-800 h-10 rounded-md outline-none text-neutral-400 shadow shadow-neutral-700 px-2 w-72 "
+                  className="bg-neutral-800 h-10 rounded-md outline-none text-neutral-400 shadow shadow-neutral-700 px-2 w-72 md:w-96 "
                   id="email"
                 />
               </div>
@@ -76,6 +97,19 @@ const page = () => {
               Send..
             </Button>
           </form>
+          <div className=" flex-col gap-5 items-center justify-center hidden md:flex">
+            <div className="text-neutral-400 mr-17 ">
+              <Mail
+                size={150}
+                className="shadow-2xl hover:text-neutral-400  hover:drop-shadow-sm hover:drop-shadow-neutral-700 transition duration-300"
+              />
+            </div>
+          </div>
+          <div className="flex flex-col gap-5 items-center justify-start mt-2 md:hidden">
+            <div className="text-neutral-400 mr-17">
+              <Mail size={30} />
+            </div>
+          </div>
         </div>
         {/* card */}
         <div className="md:w-[48%] h-44 flex flex-col justify-between md:ml-22 mx-5 mt-6 items-start bg-neutral-900 shadow-neutral-700 shadow rounded-lg px-5 py-4 relative md:overflow-hidden">

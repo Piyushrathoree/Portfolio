@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useId } from "react";
+import React, { useState, useEffect, useId, useRef, useCallback } from "react";
 
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
@@ -18,7 +18,7 @@ export interface ContainerTextFlipProps {
   animationDuration?: number;
 }
 
-export function  ContainerTextFlip({
+export function ContainerTextFlip({
   words = ["better", "modern", "beautiful", "awesome"],
   interval = 3000,
   className,
@@ -28,30 +28,28 @@ export function  ContainerTextFlip({
   const id = useId();
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [width, setWidth] = useState(100);
-  const textRef = React.useRef(null);
+  const textRef = useRef<HTMLDivElement>(null);
 
-  const updateWidthForWord = () => {
+  // Memoized function to update width
+  const updateWidthForWord = useCallback(() => {
     if (textRef.current) {
-      // Add some padding to the text width (30px on each side)
-      // @ts-expect-error - textRef.current is not null
-      const textWidth = textRef.current.scrollWidth + 30;
+      const textWidth = textRef.current.scrollWidth + 30; // Add padding
       setWidth(textWidth);
     }
-  };
+  }, []);
 
+  // Update width whenever the word changes
   useEffect(() => {
-    // Update width whenever the word changes
     updateWidthForWord();
-  }, [currentWordIndex]);
+  }, [currentWordIndex, updateWidthForWord]);
 
+  // Cycle through words at the given interval
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
-      // Width will be updated in the effect that depends on currentWordIndex
     }, interval);
-
     return () => clearInterval(intervalId);
-  }, [words, interval]);
+  }, [words.length, interval]);
 
   return (
     <motion.div
