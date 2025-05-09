@@ -3,13 +3,18 @@ import { CircleDot, GraduationCap, HandHeart, MapPin } from "lucide-react";
 import React from "react";
 import ShowcaseCard3 from "@/components/ShowcaseCard3";
 import ShowcaseCard4 from "@/components/ShowcaseCard4";
+import { cn } from "@/lib/utils";
+import { DotPattern } from "@/components/magicui/dot-pattern";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const page = () => {
   const items = [
     {
       icon: <GraduationCap size={22} />,
       title: "Background",
-      description: "Currently a pre-final year student persuing Btech in CSE , and love to code and build new projects",
+      description:
+        "Currently a pre-final year student persuing Btech in CSE , and love to code and build new projects",
     },
     {
       icon: (
@@ -77,7 +82,15 @@ const page = () => {
           but my true strength lies in crafting reliable backend solutions that
           power seamless user experiences.
         </div>
+        <Button className="bg-neutral-800 text-neutral-200 shadow shadow-neutral-700 rounded-sm hover:bg-neutral-900 transition-all duration-300 px-2 md:px-3 max-md:mt-1">
+          <Link href="#">Download Resume</Link>
+        </Button>
         <div className="p-8 text-neutral-400">
+          <DotPattern
+            className={cn(
+              "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)] sm:-ml-45 sm:mt-55 mt-95"
+            )}
+          />
           <GridBox items={items} />
         </div>
         <hr className="w-full my-4 border-neutral-800 md:-ml-5  " />
