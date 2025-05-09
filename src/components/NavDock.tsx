@@ -45,8 +45,8 @@ export function NavDock() {
                     "size-12 rounded-full text-neutral-500 max-md:hover:bg-transparent max-md:hover:text-neutral-300"
                   )}
                 >
-                  <div className="flex flex-col items-center gap-1 hover:underline duration-300 hover:text-neutral-300">
-                    <item.icon className="size-4 " />
+                  <div className="flex flex-col items-center gap-1 hover:underline duration-300 hover:text-neutral-800">
+                    <item.icon className="size-4 hover:text-neutral-800" />
                     <span className=" block md:hidden  ">
                       {item.label}
                     </span>
