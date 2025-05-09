@@ -39,7 +39,7 @@ export function CopyEmail() {
       <ConfettiButton>
         <div
           onClick={handleCopy}
-          className="px-4 py-[7px] rounded-sm border hover:scale-105 duration-300 border-neutral-700 bg-neutral-800 text-white hover:bg-neutral-700 transition"
+          className="px-4 py-[7px] rounded-sm border hover:scale-105 duration-300 border-neutral-700 bg-neutral-800 text-white hover:bg-neutral-900 transition"
         >
           <span className="flex items-center gap-2">
             {copied ? (
