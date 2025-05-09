@@ -144,3 +144,17 @@
 @theme {
   --font-custom: "Raleway", sans-serif;
 }
+.projects {
+  scrollbar-width: none;
+}
+
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px #18181b inset !important; /* Use your desired bg color */
+  box-shadow: 0 0 0 1000px #2f2f30 inset !important;         /* Use your desired bg color */
+  -webkit-text-fill-color: #d4d4d8 !important;                /* Use your desired text color */
+  transition: background-color 5000s ease-in-out 0s;
+  /* background-color: #292828 !important; */
+}
