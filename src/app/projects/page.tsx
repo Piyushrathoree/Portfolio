@@ -1,5 +1,5 @@
-import CardDemo from '@/components/cards-demo-3';   
-import React from 'react'
+import CardDemo from "@/components/cards-demo-3";
+import React from "react";
 
 const page = () => {
   const Projects = [
@@ -9,6 +9,15 @@ const page = () => {
       video: "/crewcanvas.mp4",
       link: "https://crew-canvas-client.vercel.app/",
       github: "https://github.com/Piyushrathoree/CrewCanvas-client/",
+      tags: [
+        "React",
+        "Typescript",
+        "Tailwind",
+        "Node",
+        "Express",
+        "MongoDB",
+        "Aceternity",
+      ],
     },
     {
       title: "Brainly",
@@ -17,6 +26,42 @@ const page = () => {
       video: "/brainly.mp4",
       link: "https://appbrainly.vercel.app/",
       github: "https://github.com/PiyushRathoree/Brainly-client",
+      tags: [
+        "React",
+        "Typescript",
+        "Tailwind",
+        "Node",
+        "Express",
+        "MongoDB",
+        "Aceternity",
+        "Redux",
+      ],
+    },
+
+    {
+      title: "Sofia",
+      description: "An AI-powered Chat Application ",
+      video: "/sofia.mp4",
+      // link: "https://github.com/PiyushRathoree/",
+      github: "https://github.com/Piyushrathoree/Sofia-AI",
+      tags: ["React", "Tailwind", "Node", "Express", "MongoDB", "v0", "Gemini"],
+    },
+
+    {
+      title: "Portfolio website",
+      description: "My own portfolio website",
+      video: "/portfolio.mp4",
+      link: "https://piyushrathore.vercel.app/",
+      github: "https://github.com/PiyushRathoree/Portfolio",
+      tags: [
+        "NextJS",
+        "React",
+        "Typescript",
+        "Tailwind",
+        "Framer Motion",
+        "Aceternity",
+        "Magic UI",
+      ],
     },
     {
       title: "VideoTube - Backend",
@@ -26,25 +71,18 @@ const page = () => {
       // link: "https://github.com/PiyushRathoree/Yt-Backend-With-Scalable-Architecture",
       github:
         "https://github.com/PiyushRathoree/Yt-Backend-With-Scalable-Architecture",
-    },
-    {
-      title: "Sofia",
-      description: "An AI-powered Chat Application ",
-      video: "/sofia.mp4",
-      // link: "https://github.com/PiyushRathoree/",
-      github: "https://github.com/Piyushrathoree/Sofia-AI",
-    },
-
-    {
-      title: "Portfolio website",
-      description: "My own portfolio website",
-      video: "/portfolio.png",
-      link: "https://piyushrathore.vercel.app/",
-      github: "https://github.com/PiyushRathoree/Portfolio",
+      tags: [
+        "Node",
+        "Express",
+        "MongoDB",
+        "Javascript",
+        "Aggregation",
+        "Mongoose",
+      ],
     },
   ];
   return (
-    <div className="md:h-[125vh] h-[210vh]">
+    <div className="md:h-[148vh] h-[210vh]">
       <div className=" mt-24">
         <div className="text-3xl md:text-4xl font-semibold top-24 text-neutral-300 max-md:ml-4 ">
           Projects
@@ -59,13 +97,14 @@ const page = () => {
                 video={project.video}
                 link={project.link}
                 github={project.github}
+                tags={project.tags}
               />
-            ))} 
+            ))}
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
 
-export default page 
+export default page;

@@ -43,6 +43,15 @@ export default function Home() {
       video: "/crewcanvas.mp4",
       link: "https://crew-canvas-client.vercel.app/",
       github: "https://github.com/Piyushrathoree/CrewCanvas-client/",
+      tags: [
+        "React",
+        "Typescript",
+        "Tailwind",
+        "Node",
+        "Express",
+        "MongoDB",
+        "Aceternity",
+      ],
     },
     {
       title: "Brainly",
@@ -51,9 +60,20 @@ export default function Home() {
       video: "/brainly.mp4",
       link: "https://appbrainly.vercel.app/",
       github: "https://github.com/PiyushRathoree/Brainly-client",
-    }]
+      tags: [
+        "React",
+        "Typescript",
+        "Tailwind",
+        "Node",
+        "Express",
+        "MongoDB",
+        "Aceternity",
+        "Redux",
+      ],
+    },
+  ];
   return (
-    <div className="min-h-screen w-full overflow-hidden relative">
+    <div className="min-h-screen w-full overflow-hidden relative ">
       <Meteors number={40} className="absolute inset-0 " />
 
       <motion.div
@@ -127,6 +147,7 @@ export default function Home() {
               video={project.video}
               link={project.link}
               github={project.github}
+              tags={project.tags}
             />
           ))}
         </motion.div>

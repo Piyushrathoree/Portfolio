@@ -10,6 +10,7 @@ interface CardProps {
   video: string;
   link?: string;
   github?: string;
+  tags?: string[];
 }
 export default function CardDemo({
   title,
@@ -17,21 +18,22 @@ export default function CardDemo({
   video,
   link,
   github,
+  tags,
 }: CardProps) {
   return (
-    <Card className="bg-neutral-900 border-none h-[35vh]  ">
-      <div className="h-full w-full flex flex-col justify-start relative">
+    <Card className="bg-neutral-900 border-none h-[43vh]  ">
+      <div className="h-full w-full flex flex-col justify-start gap-3 relative">
         <video
           src={video}
           loop
           autoPlay
           muted
           poster={video}
-          className="w-full h-[60%] object-cover rounded-lg md:mb-12 mb-7"
+          className="w-full h-[60%] object-cover rounded-lg md:mb-2 mb-2 opacity-80"
         />
-        <div className="flex flex-col justify-between ">
+        <div className="flex flex-col justify-between ml-1 ">
           <div className="flex items-center justify-between ">
-            <CardTitle className="text-neutral-200 ">{title}</CardTitle>
+            <CardTitle className="text-neutral-200 -mt-5 ">{title}</CardTitle>
             <div className="flex items-center gap-2">
               {link && (
                 <Link
@@ -56,6 +58,13 @@ export default function CardDemo({
           <CardDescription className="text-neutral-400 border-t border-neutral-800 pt-2">
             {description}
           </CardDescription>
+          <div className="flex flex-wrap gap-2 mt-3">
+            {tags?.map((tag) => (
+              <div key={tag} className="bg-neutral-800 text-neutral-400 px-2 py-1  rounded text-xs font-medium hover:text-neutral-300 duration-300">
+                {tag}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </Card>
