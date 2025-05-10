@@ -18,7 +18,13 @@ const fadeInUp = {
 };
 
 // ScrollFadeIn component with scroll-triggered animation
-const ScrollFadeIn = ({ children, className = "" }: { children: React.ReactNode, className?: string }) => {
+const ScrollFadeIn = ({
+  children,
+  className = "",
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
@@ -71,7 +77,7 @@ const page = () => {
   ];
 
   return (
-    <div className="flex flex-col justify-start items-start min-h-screen mt-20 md:py-10 md:pl-10 pl-5 py-5">
+    <div className="flex flex-col justify-start items-start min-h-screen mt-20 md:py-10 md:pl-10 pl-5 overflow-x-hidden">
       {/* Location Button */}
       <div className="flex  gap-4 items-start justify-center ">
         <ScrollFadeIn>
@@ -127,20 +133,18 @@ const page = () => {
         </ScrollFadeIn>
 
         {/* Dot Pattern */}
-        <ScrollFadeIn className="p-8 text-neutral-400">
+        <ScrollFadeIn className="p-8 text-neutral-400 relative">
           <DotPattern
             className={cn(
-              "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)] sm:-ml-45 sm:mt-55 mt-95"
+              "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)] md:-ml-48 -ml-3"
             )}
           />
           <GridBox items={items} />
         </ScrollFadeIn>
 
-        {/* Horizontal Line */}
-        <hr className="w-full my-4 border-neutral-800 md:-ml-5" />
+        <div className="w-[90%] md:w-full border-b border-neutral-700 my-4 ml-2 md:-ml-5" />
 
-        {/* Showcase Cards */}
-        <ScrollFadeIn className="flex flex-col sm:-ml-7 ml-[10px] md:flex-row gap-4 w-full items-start justify-center mt-6 md:mt-7">
+        <ScrollFadeIn className="flex flex-col sm:-ml-7 mb-5  ml-[10px] md:flex-row gap-4 w-full items-start justify-center mt-6 md:mt-7">
           <ShowcaseCard3 />
           <ShowcaseCard4 />
         </ScrollFadeIn>

@@ -101,7 +101,7 @@ const page = () => {
             <div className="text-neutral-400 mr-17 ">
               <Mail
                 size={150}
-                className="shadow-2xl hover:text-neutral-400  hover:drop-shadow-sm hover:drop-shadow-neutral-700 transition duration-300"
+                className="bg-transparent hover:scale-102 duration-300"
               />
             </div>
           </div>

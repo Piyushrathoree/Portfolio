@@ -113,7 +113,7 @@ const Devops = [
     tags: ["Containerization", "Docker"],
   },
   {
-    icon: <Image src="/Icons/vercel.svg" alt="Vercel" width={4} height={40} className="rounded-xl" />,
+    icon: <Image src="/Icons/vercel.svg" alt="Vercel" width={40} height={40} className="rounded-xl" />,
     title: "Vercel",
     description:
       "Serverless platform for static sites and0serverless functions",
