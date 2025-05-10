@@ -21,7 +21,7 @@ export default function CardDemo({
   tags,
 }: CardProps) {
   return (
-    <Card className="bg-neutral-900 border-none h-[43vh]  ">
+    <Card className="bg-neutral-900 border-none h-[44vh]  ">
       <div className="h-full w-full flex flex-col justify-start gap-3 relative">
         <video
           src={video}
@@ -33,8 +33,8 @@ export default function CardDemo({
           preload="none"
         />
         <div className="flex flex-col justify-between ml-1 ">
-          <div className="flex items-center justify-between ">
-            <CardTitle className="text-neutral-200 -mt-5 ">{title}</CardTitle>
+          <div className="flex items-center justify-between -mt-5 ">
+            <CardTitle className="text-neutral-200  ">{title}</CardTitle>
             <div className="flex items-center gap-2">
               {link && (
                 <Link
@@ -59,7 +59,7 @@ export default function CardDemo({
           <CardDescription className="text-neutral-400 border-t border-neutral-800 pt-2">
             {description}
           </CardDescription>
-          <div className="flex flex-wrap gap-2 mt-3">
+          <div className="flex flex-wrap gap-2 mt-4 ">
             {tags?.map((tag) => (
               <div
                 key={tag}
