@@ -82,9 +82,9 @@ const page = () => {
     },
   ];
   return (
-    <div className="md:h-[148vh] h-[210vh]">
-      <div className=" mt-24">
-        <div className="text-3xl md:text-4xl font-semibold top-24 text-neutral-300 max-md:ml-4 ">
+    <div className="md:h-[148vh] h-[210vh] ">
+      <div className=" mt-24 ml-3">
+        <div className="text-3xl md:text-4xl font-semibold top-24 text-neutral-300 max-md:ml-4  ">
           Projects
         </div>
         <div className="h-[85vh] pr-14  bg-transparent mt-10 ">
