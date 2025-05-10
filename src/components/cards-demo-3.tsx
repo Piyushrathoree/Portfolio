@@ -30,6 +30,7 @@ export default function CardDemo({
           muted
           poster={video}
           className="w-full h-[60%] object-cover rounded-lg md:mb-2 mb-2 opacity-80"
+          preload="none"
         />
         <div className="flex flex-col justify-between ml-1 ">
           <div className="flex items-center justify-between ">
@@ -60,7 +61,10 @@ export default function CardDemo({
           </CardDescription>
           <div className="flex flex-wrap gap-2 mt-3">
             {tags?.map((tag) => (
-              <div key={tag} className="bg-neutral-800 text-neutral-400 px-2 py-1  rounded text-xs font-medium hover:text-neutral-300 duration-300">
+              <div
+                key={tag}
+                className="bg-neutral-800 text-neutral-400 px-2 py-1  rounded text-xs font-medium hover:text-neutral-300 duration-300"
+              >
                 {tag}
               </div>
             ))}
