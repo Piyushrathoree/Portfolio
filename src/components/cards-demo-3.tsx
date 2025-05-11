@@ -21,7 +21,7 @@ export default function CardDemo({
   tags,
 }: CardProps) {
   return (
-    <Card className="bg-neutral-900 border-none h-[43vh]  ">
+    <Card className="bg-neutral-900 border-none h-full  ">
       <div className="h-full w-full flex flex-col justify-start gap-3 relative">
         <video
           src={video}
@@ -59,7 +59,7 @@ export default function CardDemo({
           <CardDescription className="text-neutral-400 border-t border-neutral-800 pt-2">
             {description}
           </CardDescription>
-          <div className="flex flex-wrap gap-2 mt-4 absolute bottom-2">
+          <div className="flex flex-wrap gap-2 mt-4  bottom-2">
             {tags?.map((tag) => (
               <div
                 key={tag}

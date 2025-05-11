@@ -80,7 +80,7 @@ const page = () => {
     },
   ];
   return (
-    <div className="lg:h-[150vh] md:h-[160vh] h-[252vh]  relative ">
+    <div className="lg:h-[142vh] md:h-[160vh] h-[130rem]  relative ">
       <div className=" mt-24 ml-3">
         <div className="text-3xl md:text-4xl font-semibold top-24 text-neutral-300 max-md:ml-4  ">
           Projects
