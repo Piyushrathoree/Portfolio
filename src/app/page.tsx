@@ -54,9 +54,8 @@ export default function Home() {
       ],
     },
     {
-      title: "Brainly",
-      description:
-        "A Second Brain application where you can save your notes, ideas, and thoughts.",
+      title: "Brainly -A Second Brain ",
+      description: "where you can save your notes, ideas, and thoughts.",
       video: "/brainly.mp4",
       link: "https://appbrainly.vercel.app/",
       github: "https://github.com/PiyushRathoree/Brainly-client",
