@@ -20,9 +20,8 @@ const page = () => {
       ],
     },
     {
-      title: "Brainly",
-      description:
-        "A Second Brain application where you can save your notes, ideas, and thoughts.",
+      title: "Brainly -A Second Brain ",
+      description: "where you can save your notes, ideas, and thoughts.",
       video: "/brainly.mp4",
       // link: "https://appbrainly.vercel.app/",
       github: "https://github.com/PiyushRathoree/Brainly-client",
@@ -81,7 +80,7 @@ const page = () => {
     },
   ];
   return (
-    <div className="md:h-[150vh] h-[252vh] relative ">
+    <div className="lg:h-[150vh] md:h-[160vh] h-[252vh]  relative ">
       <div className=" mt-24 ml-3">
         <div className="text-3xl md:text-4xl font-semibold top-24 text-neutral-300 max-md:ml-4  ">
           Projects

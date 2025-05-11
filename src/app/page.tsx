@@ -137,7 +137,7 @@ export default function Home() {
         </motion.div>
         <motion.div
           variants={itemVariants}
-          className="justify-between w-full gap-10 flex flex-col md:flex-row "
+          className="justify-between h-[47vh] w-full gap-10 flex flex-col md:flex-row items-center -mb-5"
         >
           {Projects.map((project) => (
             <CardDemo
