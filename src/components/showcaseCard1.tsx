@@ -5,7 +5,7 @@ import React from "react";
 
 const ShowcaseCard1 = () => {
   return (
-    <div className="w-[99%] max-md:h-[28vh] min-h-[16vh] flex flex-col items-start pt-5 px-5 bg-neutral-900 shadow-neutral-700 shadow rounded-lg  ">
+    <div className="w-[99%] max-md:h-[35vh] pb-3 flex flex-col items-start pt-5 px-5 bg-neutral-900 shadow-neutral-700 shadow rounded-lg  ">
       <div className="flex items-center justify-between w-full pr-2 mb-2">
         <div className="text-neutral-200 font-bold text-xl">Thoughts</div>
         <Link href="/Blogs">
@@ -22,10 +22,10 @@ const ShowcaseCard1 = () => {
           </div>
           <div>
             <div className="text-neutral-200 font-medium text-sm truncate overflow-hidden whitespace-nowrap">
-              Best Coding Practices for Modern .....
+              Best Coding Practices  .....
             </div>
             <div className="text-neutral-400 font-medium text-[12px] truncate overflow-hidden whitespace-nowrap">
-              A comprehensive guide to coding best .....
+              A guide to coding best .....
             </div>
           </div>
         </div>
@@ -35,10 +35,10 @@ const ShowcaseCard1 = () => {
           </div>
           <div>
             <div className="text-neutral-200 font-medium text-sm truncate overflow-hidden whitespace-nowrap">
-              Best Coding Practices for Modern .....
+             React vs Next
             </div>
             <div className="text-neutral-400 font-medium text-[12px] truncate overflow-hidden whitespace-nowrap">
-              A comprehensive guide to coding.....
+              Covering all major difference ....
             </div>
           </div>
         </div>
