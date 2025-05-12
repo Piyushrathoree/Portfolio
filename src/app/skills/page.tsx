@@ -3,32 +3,72 @@ import Image from "next/image";
 
 const Frontend = [
   {
-    icon: <Image src="/Icons/nextjs.svg" alt="Next.js" width={35} height={35} className="rounded-xl" />,
+    icon: (
+      <Image
+        src="/Icons/nextjs.svg"
+        alt="Next.js"
+        width={35}
+        height={35}
+        className="rounded-xl"
+      />
+    ),
     title: "Next.js",
     description: "React Framework for production grade web applications",
     tags: ["React", "App Router", "V15", "SSR"],
   },
   {
-    icon: <Image src="/Icons/react.svg" alt="React" width={35} height={35} className="rounded-xl" />,
+    icon: (
+      <Image
+        src="/Icons/react.svg"
+        alt="React"
+        width={35}
+        height={35}
+        className="rounded-xl"
+      />
+    ),
     title: "React",
     description: "Frontend Library for Javascript",
     tags: ["React Router", "React Hooks", "Redux", "Zustand"],
   },
   {
-    icon: <Image src="/Icons/tailwind.svg" alt="Tailwind CSS" width={35} height={35} className="rounded-xl" />,
+    icon: (
+      <Image
+        src="/Icons/tailwind.svg"
+        alt="Tailwind CSS"
+        width={35}
+        height={35}
+        className="rounded-xl"
+      />
+    ),
     title: "Tailwind CSS",
     description: "Utility-first CSS framework",
     tags: ["Responsive Design", "Utility-first", "Styling"],
   },
   {
-    icon: <Image src="/Icons/ts.svg" alt="Typescript" width={35} height={35} className="rounded-xl" />,
+    icon: (
+      <Image
+        src="/Icons/ts.svg"
+        alt="Typescript"
+        width={35}
+        height={35}
+        className="rounded-xl"
+      />
+    ),
     title: "TypeScript",
     description:
       "Strongly Typed programming language built on top of Javascript",
     tags: ["Javascript", "Language", "Type Safety"],
   },
   {
-    icon:<Image src="/Icons/shadcn.svg" alt="Shadcn/ui" width={35} height={35} className="rounded-xl" />,
+    icon: (
+      <Image
+        src="/Icons/shadcn.svg"
+        alt="Shadcn/ui"
+        width={35}
+        height={35}
+        className="rounded-xl"
+      />
+    ),
     title: "UI Libraries",
     description: "UI Libraries for styling and components",
     tags: ["Shadcn/ui", "Aceternity UI", "Magic UI"],
@@ -37,37 +77,85 @@ const Frontend = [
 
 const Backend = [
   {
-    icon: <Image src="/Icons/node.svg" alt="Node.js" width={35} height={35} className="rounded-xl" />,
+    icon: (
+      <Image
+        src="/Icons/node.svg"
+        alt="Node.js"
+        width={35}
+        height={35}
+        className="rounded-xl"
+      />
+    ),
     title: "Node.js",
     description: "Javascript runtime built on Chrome's V8 engine",
     tags: ["Javascript", "Runtime", "Chrome's V8 engine"],
   },
   {
-    icon: <Image src="/Icons/express.svg" alt="Express.js" width={35} height={35} className="rounded-xl" />,
+    icon: (
+      <Image
+        src="/Icons/express.svg"
+        alt="Express.js"
+        width={35}
+        height={35}
+        className="rounded-xl"
+      />
+    ),
     title: "Express.js",
     description: "Web application framework for Node.js",
     tags: ["Web Application", "Framework", "Node.js"],
   },
   {
-    icon: <Image src="/Icons/mongo.svg" alt="MongoDB" width={35} height={35} className="rounded-xl" />,
+    icon: (
+      <Image
+        src="/Icons/mongo.svg"
+        alt="MongoDB"
+        width={35}
+        height={35}
+        className="rounded-xl"
+      />
+    ),
     title: "MongoDB",
     description: "NoSQL/Non-Relational Database",
     tags: ["NoSQL", "MongoDB Atlas"],
   },
   {
-    icon: <Image src="/Icons/postgres.svg" alt="PostgreSQL" width={35} height={35} className="rounded-xl" />,
+    icon: (
+      <Image
+        src="/Icons/postgres.svg"
+        alt="PostgreSQL"
+        width={35}
+        height={35}
+        className="rounded-xl"
+      />
+    ),
     title: "PostgreSQL",
     description: "Relational Database",
     tags: ["Relational", "Neon"],
   },
   {
-    icon: <Image src="/Icons/prisma.svg" alt="Prisma" width={35} height={35} className="rounded-xl" />,
+    icon: (
+      <Image
+        src="/Icons/prisma.svg"
+        alt="Prisma"
+        width={35}
+        height={35}
+        className="rounded-xl"
+      />
+    ),
     title: "Prisma",
     description: "ORM  and PostgreSQL",
     tags: ["ORM", "PostgreSQL"],
   },
   {
-    icon: <Image src="/Icons/socket.svg" alt="Socket.io" width={35} height={35} className="rounded-xl" />,
+    icon: (
+      <Image
+        src="/Icons/socket.svg"
+        alt="Socket.io"
+        width={35}
+        height={35}
+        className="rounded-xl"
+      />
+    ),
     title: "Socket.io",
     description: "Real-time communication technologies",
     tags: ["WebSockets", "WebRTC"],
@@ -75,31 +163,71 @@ const Backend = [
 ];
 const Tools = [
   {
-    icon: <Image src="/Icons/cursor.webp" alt="Cursor" width={35} height={35} className="rounded-xl" />,
+    icon: (
+      <Image
+        src="/Icons/cursor.webp"
+        alt="Cursor"
+        width={35}
+        height={35}
+        className="rounded-xl"
+      />
+    ),
     title: "Cursor",
     description: "AI-powered code editor built on top of VSCode",
     tags: ["AI", "Code Editor", "VSCode"],
   },
   {
-    icon: <Image src="/Icons/postman.svg" alt="Postman" width={35} height={35} className="rounded-xl" />,
+    icon: (
+      <Image
+        src="/Icons/postman.svg"
+        alt="Postman"
+        width={35}
+        height={35}
+        className="rounded-xl"
+      />
+    ),
     title: "Postman",
     description: "API development and testing tool",
     tags: ["API", "Testing"],
   },
   {
-    icon: <Image src="/Icons/git.svg" alt="Git" width={35} height={35} className="rounded-xl" />,
+    icon: (
+      <Image
+        src="/Icons/git.svg"
+        alt="Git"
+        width={35}
+        height={35}
+        className="rounded-xl"
+      />
+    ),
     title: "Git",
     description: "Version Control System",
     tags: ["Version Control", "Git"],
   },
   {
-    icon: <Image src="/Icons/github.svg" alt="Github" width={35} height={35} className="rounded-xl" />,
+    icon: (
+      <Image
+        src="/Icons/github.svg"
+        alt="Github"
+        width={35}
+        height={35}
+        className="rounded-xl"
+      />
+    ),
     title: "Github",
     description: "User Interface for version control system",
     tags: ["Version Control", "Git"],
   },
   {
-    icon: <Image src="/Icons/vercel.svg" alt="v0.dev" width={30} height={30} className="rounded-xl" />,
+    icon: (
+      <Image
+        src="/Icons/vercel.svg"
+        alt="v0.dev"
+        width={30}
+        height={30}
+        className="rounded-xl"
+      />
+    ),
     title: "v0.dev",
     description: "AI-powered UI generation tool",
     tags: ["AI", "UI Generation"],
@@ -107,13 +235,29 @@ const Tools = [
 ];
 const Devops = [
   {
-    icon: <Image src="/Icons/docker.svg" alt="Docker" width={35} height={35} className="rounded-xl" />,
+    icon: (
+      <Image
+        src="/Icons/docker.svg"
+        alt="Docker"
+        width={35}
+        height={35}
+        className="rounded-xl"
+      />
+    ),
     title: "Docker",
     description: "Containerization tool",
     tags: ["Containerization", "Docker"],
   },
   {
-    icon: <Image src="/Icons/vercel.svg" alt="Vercel" width={40} height={40} className="rounded-xl" />,
+    icon: (
+      <Image
+        src="/Icons/vercel.svg"
+        alt="Vercel"
+        width={40}
+        height={40}
+        className="rounded-xl"
+      />
+    ),
     title: "Vercel",
     description:
       "Serverless platform for static sites and0serverless functions",
@@ -122,25 +266,57 @@ const Devops = [
 ];
 const ProgrammingLanguages = [
   {
-    icon: <Image src="/Icons/js.svg" alt="Javascript" width={35} height={35} className="rounded-xl" />,
+    icon: (
+      <Image
+        src="/Icons/js.svg"
+        alt="Javascript"
+        width={35}
+        height={35}
+        className="rounded-xl"
+      />
+    ),
     title: "Javascript",
     description: "Programming language for the web",
     tags: ["Javascript", "Language"],
   },
   {
-    icon: <Image src="/Icons/ts.svg" alt="Typescript" width={35 } height={35} className="rounded-xl" />,
+    icon: (
+      <Image
+        src="/Icons/ts.svg"
+        alt="Typescript"
+        width={35}
+        height={35}
+        className="rounded-xl"
+      />
+    ),
     title: "Typescript",
     description: "Programming language for the web",
     tags: ["Typescript", "Language"],
   },
   {
-    icon: <Image src="/Icons/python.svg" alt="Python" width={35} height={35} className="rounded-xl" />,
+    icon: (
+      <Image
+        src="/Icons/python.svg"
+        alt="Python"
+        width={35}
+        height={35}
+        className="rounded-xl"
+      />
+    ),
     title: "Python",
     description: "Programming language for the web",
     tags: ["Python", "Language"],
   },
   {
-    icon: <Image src="/Icons/cpp.svg" alt="C++" width={35} height={35} className="rounded-xl" />,
+    icon: (
+      <Image
+        src="/Icons/cpp.svg"
+        alt="C++"
+        width={35}
+        height={35}
+        className="rounded-xl"
+      />
+    ),
     title: "C++",
     description: "low level programming language",
     tags: ["C++", "Language"],
@@ -160,22 +336,21 @@ export default function SkillsPage() {
       <div className="text-2xl font-bold text-neutral-200 mb-4 mt-5">
         <div className="border border-neutral-800 p-4 rounded-tr-lg rounded-tl-lg bg-[#1b1b1b]">
           {" "}
-          Frontend Technologies
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2  gap-4 border border-neutral-800 px-10 pt-4 pb-5 rounded-br-lg rounded-bl-lg">
-          {Frontend.map((skill) => (
-            <SkillsCard key={skill.title} {...skill} tags={skill.tags} />
-          ))}
-        </div>
-      </div>
-
-      <div className="text-2xl font-bold text-neutral-200 mb-4 mt-5">
-        <div className="border border-neutral-800 p-4 rounded-tr-lg rounded-tl-lg bg-[#1b1b1b]">
-          {" "}
           Backend Technologies
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2  gap-4 border border-neutral-800 px-10 pt-4 pb-5 rounded-br-lg rounded-bl-lg">
           {Backend.map((skill) => (
+            <SkillsCard key={skill.title} {...skill} tags={skill.tags} />
+          ))}
+        </div>
+      </div>
+      <div className="text-2xl font-bold text-neutral-200 mb-4 mt-5">
+        <div className="border border-neutral-800 p-4 rounded-tr-lg rounded-tl-lg bg-[#1b1b1b]">
+          {" "}
+          Frontend Technologies
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2  gap-4 border border-neutral-800 px-10 pt-4 pb-5 rounded-br-lg rounded-bl-lg">
+          {Frontend.map((skill) => (
             <SkillsCard key={skill.title} {...skill} tags={skill.tags} />
           ))}
         </div>
