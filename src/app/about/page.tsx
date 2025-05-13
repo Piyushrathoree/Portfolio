@@ -128,7 +128,9 @@ const page = () => {
 
         <ScrollFadeIn>
           <Button className="bg-neutral-800 text-neutral-200 shadow shadow-neutral-700 rounded-sm hover:bg-neutral-900 transition-all duration-300 px-2 md:px-3 max-md:mt-1">
-            <Link href="#">Download Resume</Link>
+            <Link href="https://docs.google.com/document/d/1oxLwnbNMaTX-cjvZstqD1DfC2gEuuwYP/edit?usp=sharing&ouid=117718995135142463066&rtpof=true&sd=true">
+              Download Resume
+            </Link>
           </Button>
         </ScrollFadeIn>
 
