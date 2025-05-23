@@ -80,7 +80,7 @@ const page = () => {
     },
   ];
   return (
-    <div className="lg:h-[142vh] md:h-[160vh] h-[130rem]  relative ">
+    <div className="lg:h-[142vh] md:h-[160vh] h-[130rem]  relative mb-10">
       <div className=" mt-24 ml-3">
         <div className="text-3xl md:text-4xl font-semibold top-24 text-neutral-300 max-md:ml-4  ">
           Projects
@@ -101,7 +101,7 @@ const page = () => {
           </div>
         </div>
       </div>
-      <div className="absolute -bottom-22  text-sm border border-neutral-800 px-4 rounded-md py-1 -right-120  text-neutral-400 hover:text-neutral-200 hover:-translate-y-2 duration-300 hidden md:block">Live links will be available soon !!</div>
+      <div className="absolute -bottom-22  text-sm border border-neutral-800 px-4 rounded-md py-1 -right-110  text-neutral-400 hover:text-neutral-200 hover:-translate-y-2 duration-300 hidden md:block">Live links will be available soon !!</div>
     </div>
   );
 };
