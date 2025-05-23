@@ -101,7 +101,7 @@ const page = () => {
           </div>
         </div>
       </div>
-      <div className="absolute -bottom-30  text-sm border border-neutral-800 px-4 rounded-md py-1 -right-110  text-neutral-400 hover:text-neutral-200 hover:-translate-y-2 duration-300 hidden md:block">Live links will be available soon !!</div>
+      <div className="absolute -bottom-32  text-sm border border-neutral-800 px-4 rounded-md py-1 -right-107  text-neutral-400 hover:text-neutral-200 hover:-translate-y-2 duration-300 hidden md:block">Live links will be available soon !!</div>
     </div>
   );
 };
