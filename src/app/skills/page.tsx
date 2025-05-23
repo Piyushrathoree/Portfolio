@@ -88,7 +88,7 @@ const Backend = [
     ),
     title: "Node.js",
     description: "Javascript runtime built on Chrome's V8 engine",
-    tags: ["Javascript", "Runtime", "Chrome's V8 engine"],
+    tags: ["Javascript",  "Chrome's V8 engine"],
   },
   {
     icon: (
@@ -102,7 +102,7 @@ const Backend = [
     ),
     title: "Express.js",
     description: "Web application framework for Node.js",
-    tags: ["Web Application", "Framework", "Node.js"],
+    tags: ["http servers",  "Node.js"],
   },
   {
     icon: (
