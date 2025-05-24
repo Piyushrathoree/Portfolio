@@ -38,6 +38,22 @@ const itemVariants = {
 export default function Home() {
   const Projects = [
     {
+      title: "Brainly -A Second Brain ",
+      description: "where you can save your notes, ideas, and thoughts.",
+      video: "/brainly.mp4",
+      link: "https://app-brainly-peach.vercel.app/",
+      github: "https://github.com/PiyushRathoree/Brainly-client",
+      tags: [
+        "React",
+        "Typescript",
+        "Tailwind",
+        "Node",
+        "Express",
+        "MongoDB",
+        "Aceternity",
+      ],
+    },
+    {
       title: "CrewCanvas",
       description: "A canvas for your team to collaborate on projects.",
       video: "/crewcanvas.mp4",
@@ -51,23 +67,6 @@ export default function Home() {
         "Express",
         "MongoDB",
         "Aceternity",
-      ],
-    },
-    {
-      title: "Brainly -A Second Brain ",
-      description: "where you can save your notes, ideas, and thoughts.",
-      video: "/brainly.mp4",
-      link: "https://appbrainly.vercel.app/",
-      github: "https://github.com/PiyushRathoree/Brainly-client",
-      tags: [
-        "React",
-        "Typescript",
-        "Tailwind",
-        "Node",
-        "Express",
-        "MongoDB",
-        "Aceternity",
-        "Redux",
       ],
     },
   ];
