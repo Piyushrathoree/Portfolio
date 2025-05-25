@@ -4,6 +4,23 @@ import React from "react";
 const page = () => {
   const Projects = [
     {
+      title: "Brainly -A Second Brain ",
+      description: "where you can save your notes, ideas, and thoughts.",
+      video: "/brainly.mp4",
+      link: "https://app-brainly-peach.vercel.app/",
+      github: "https://github.com/PiyushRathoree/Brainly-client",
+      tags: [
+        "React",
+        "Typescript",
+        "Tailwind",
+        "Node",
+        "Express",
+        "MongoDB",
+        "Aceternity",
+        "Redux",
+      ],
+    },
+    {
       title: "CrewCanvas",
       description: "A canvas for your team to collaborate on projects.",
       video: "/crewcanvas.mp4",
@@ -17,23 +34,6 @@ const page = () => {
         "Express",
         "MongoDB",
         "Aceternity",
-      ],
-    },
-    {
-      title: "Brainly -A Second Brain ",
-      description: "where you can save your notes, ideas, and thoughts.",
-      video: "/brainly.mp4",
-      // link: "https://appbrainly.vercel.app/",
-      github: "https://github.com/PiyushRathoree/Brainly-client",
-      tags: [
-        "React",
-        "Typescript",
-        "Tailwind",
-        "Node",
-        "Express",
-        "MongoDB",
-        "Aceternity",
-        "Redux",
       ],
     },
 
