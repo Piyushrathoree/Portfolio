@@ -78,6 +78,21 @@ const page = () => {
         "Mongoose",
       ],
     },
+    {
+      title: "Subscription management system",
+      description: "A microservices based subscription management system .",
+      video: "/videotube.jpg",
+
+      github:
+        "https://github.com/Piyushrathoree/microservices-subscription-system",
+      tags: [
+        "Microservices",
+        "Express",
+        "MongoDB",
+        "Rabbit MQ",
+        "Node",
+      ],
+    },
   ];
   return (
     <div className="lg:h-[142vh] md:h-[160vh] h-[130rem] relative mb-10">
