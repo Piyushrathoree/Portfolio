@@ -81,7 +81,7 @@ const page = () => {
     {
       title: "Subscription management system",
       description: "A microservices based subscription management system .",
-      video: "/videotube.jpg",
+      video: "/microservice.png",
 
       github:
         "https://github.com/Piyushrathoree/microservices-subscription-system",
