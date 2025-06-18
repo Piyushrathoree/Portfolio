@@ -24,33 +24,6 @@ export const metadata: Metadata = {
   ],
 };
 
-// const navItems = [
-//   {
-//     title: "Home",
-//     href: "/",
-//     icon: <HomeIcon className="h-4 w-4  " />,
-//     key: "home",
-//   },
-//   {
-//     title: "Projects",
-//     href: "/projects",
-//     icon: <Pen className="h-4 w-4  " />,
-//     key: "projects",
-//   },
-//   {
-//     title: "Contact",
-//     href: "/contact",
-//     icon: <Mail className="h-4 w-4 " />,
-//     key: "contact",
-//   },
-//   {
-//     title: "About",
-//     href: "/about",
-//     icon: <User className="h-4 w-4 " />,
-//     key: "about",
-//   },
-// ];
-
 export default function RootLayout({
   children,
 }: Readonly<{
