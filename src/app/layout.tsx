@@ -15,6 +15,13 @@ const raleway = Raleway({
 export const metadata: Metadata = {
   title: "Portfolio",
   description: "Full Stack Portfolio Of Piyush Rathore",
+  keywords: ["portfolio", "full stack", "developer", "Piyush Rathore"],
+  authors: [
+    {
+      name: "Piyush Rathore",
+      url: "https://piyushrathore.vercel.com",
+    },
+  ],
 };
 
 // const navItems = [
@@ -49,8 +56,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
- 
-
   return (
     <html lang="en">
       <body
