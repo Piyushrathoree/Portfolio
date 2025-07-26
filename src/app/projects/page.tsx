@@ -1,4 +1,5 @@
 import CardDemo from "@/components/cards-demo-3";
+import Footer from "@/components/Footer";
 import React from "react";
 
 const page = () => {
@@ -10,7 +11,7 @@ const page = () => {
       link: "https://app-brainly-peach.vercel.app/",
       github: "https://github.com/PiyushRathoree/Brainly-client",
       tags: [
-        "React",
+        "React", 
         "Typescript",
         "Tailwind",
         "Node",
@@ -94,8 +95,11 @@ const page = () => {
       ],
     },
   ];
+  
   return (
     <div className="lg:h-[142vh] md:h-[160vh] h-[168rem] relative mb-10">
+      
+      <h1 className="">sumit</h1>
       <div className=" mt-24 ml-3">
         <div className="text-3xl md:text-4xl font-semibold top-24 text-neutral-300 max-md:ml-4  ">
           Projects
@@ -117,6 +121,7 @@ const page = () => {
         </div>
       </div>
       <div className="absolute -bottom-32  text-sm border border-neutral-800 px-4 rounded-md py-1 -right-107  text-neutral-400 hover:text-neutral-200 hover:-translate-y-2 duration-300 hidden md:block">Live links will be available soon !!</div>
+      <Footer /> 
     </div>
   );
 };

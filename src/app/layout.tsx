@@ -41,7 +41,7 @@ export default function RootLayout({
             <NavDock />
           </div>
         </main>
-        <Footer />
+        <Footer />  
       </body>
     </html>
   );
