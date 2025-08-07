@@ -5,120 +5,174 @@ import { Particles } from "@/components/magicui/particles";
 import { cn } from "@/lib/utils";
 import {
     GithubIcon,
-    Link2Icon,
     LinkedinIcon,
     Mail,
+    MessageCircle,
     TwitterIcon,
 } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
 const page = () => {
-    // const handleSubmit = () =>{}
-
     const socials = [
         {
             name: "Twitter",
-            icon: <TwitterIcon />,
+            icon: <TwitterIcon size={20} />,
             link: "https://x.com/__PiyushRathore",
         },
         {
             name: "LinkedIn",
-            icon: <LinkedinIcon />,
+            icon: <LinkedinIcon size={20} />,
             link: "https://linkedin.com/in/piyushrathore--",
         },
         {
             name: "GitHub",
-            icon: <GithubIcon />,
+            icon: <GithubIcon size={20} />,
             link: "https://github.com/Piyushrathoree",
         },
     ];
+
     return (
-        <div className="h-[100vh] md:h-[90vh] flex flex-col items-center justify-center max-w-4xl mx-auto px-4 overflow-y-hidden">
-            <div className="hidden md:block">
-                <div className="text-3xl text-neutral-300 mt-12 md:mt-24 absolute left-1/2 transform -translate-x-1/2">
-                    Let&apos;s Connect....
-                </div>
+        <div className="min-h-screen flex flex-col items-center justify-center max-w-4xl mx-auto px-4 py-24">
+            {/* Background Pattern */}
+            <GridPattern
+                width={50}
+                height={50}
+                x={-1}
+                y={-1}
+                strokeDasharray={"4 2"}
+                className={cn(
+                    "[mask-image:radial-gradient(600px_circle_at_center,white,transparent)] absolute inset-0 w-full h-full opacity-30"
+                )}
+            />
+
+            {/* Header Section */}
+            <div className="text-center mb-12 relative z-10">
+                <h1 className="text-4xl md:text-5xl font-bold text-neutral-200 mb-4">
+                    Let&apos;s Connect
+                </h1>
+                <p className="text-neutral-400 text-lg max-w-2xl mx-auto">
+                    Have a project in mind or just want to chat? I&apos;d love
+                    to hear from you. Send me a message and I&apos;ll get back
+                    to you as soon as possible.
+                </p>
             </div>
-            <div className="w-full h-[100vh] md:h-full top-22 md:top-36 rounded-xl item-start justify-center pt-1 md:pt-10 relative">
-                <GridPattern
-                    width={50}
-                    height={50}
-                    x={-1}
-                    y={-1}
-                    strokeDasharray={"4 2"}
-                    className={cn(
-                        "[mask-image:radial-gradient(600px_circle_at_center,white,transparent)] hidden md:block w-full h-full"
-                    )}
-                />
-                <div className="absolute left-5 md:left-10 text-lg text-neutral-300 flex gap-2 items-center">
-                    Send Me A Mail{" "}
-                    <span>
-                        <Mail size={18} />
-                    </span>
-                </div>
-                <div className="w-[90%] md:w-[80%] bg-neutral-900 rounded-lg mt-10 py-5 px-5 flex mx-auto relative shadow shadow-neutral-700">
+
+            {/* Main Content Grid */}
+            <div className="grid md:grid-cols-2 gap-8 w-full max-w-5xl relative z-10">
+                {/* Contact Form Section */}
+                <div className="bg-neutral-900 rounded-xl p-6 md:p-8 shadow-xl border border-neutral-800 relative overflow-hidden">
                     <Particles
-                        className="absolute inset-0 z-0 "
-                        quantity={50}
-                        refresh
-                    />{" "}
-                    <ContactForm />
-                    <div className=" flex-col gap-5 items-center justify-center hidden md:flex">
-                        <div className="text-neutral-400 mr-12 -mt-40 ">
-                            <Mail
-                                size={150}
-                                className="bg-transparent hover:scale-102 duration-300"
-                            />
-                        </div>
-                    </div>
-                    <div className="flex flex-col gap-5 items-center justify-start mt-2 md:hidden">
-                        <div className="text-neutral-400 mr-17">
-                            <Mail size={30} />
-                        </div>
-                    </div>
-                </div>
-                {/* card */}
-                <div className="md:w-[48%] h-44 flex flex-col justify-between md:ml-22 mx-5 mt-4 items-start bg-neutral-900 shadow-neutral-700 shadow rounded-lg px-5 py-4 relative md:overflow-hidden">
-                    <div className="max-md:hidden">
-                        <Meteors
-                            className="absolute inset-0 z-0 "
-                            number={40}
-                            angle={65}
-                        />
-                    </div>
-                    <div className="border border-neutral-900 rounded-full bg-neutral-800 text-neutral-200 p-2 md:p-3 max-md:mb-1 md:-mt-9">
-                        <Link2Icon size={16} />
-                    </div>
-                    <div className="md:-mt-4">
-                        <div className="text-neutral-200 font-bold text-lg">
-                            Let&apos;s Connect
-                        </div>
-                        <div className="text-neutral-400 font-medium text-[12px]">
-                            Explore my diverse projects in web development and
-                            beyond.
-                        </div>
-                    </div>
-                    <div>
-                        <div className="flex items-center gap-3 md:-mt-3 max-md:mt-2 ">
-                            {socials.map((social) => (
-                                <Link
-                                    href={social.link}
-                                    key={social.name}
-                                    className="text-neutral-500 hover:text-neutral-200 transition-all duration-300"
-                                >
-                                    {social.icon}
-                                </Link>
-                            ))}
-                        </div>
-                    </div>
-                    <Particles
-                        className="absolute inset-0 z-0 md:hidden"
-                        quantity={20}
-                        ease={80}
+                        className="absolute inset-0 z-0"
+                        quantity={30}
                         refresh
                     />
+
+                    <div className="relative z-10">
+                        <div className="flex items-center gap-3 mb-6">
+                            <div className="p-2 bg-neutral-800 rounded-lg">
+                                <Mail size={20} className="text-neutral-300" />
+                            </div>
+                            <h2 className="text-xl font-semibold text-neutral-200">
+                                Send Me A Message
+                            </h2>
+                        </div>
+                        <ContactForm />
+                    </div>
                 </div>
+
+                {/* Connect Section */}
+                <div className="space-y-6">
+                    {/* Social Links Card */}
+                    <div className="bg-neutral-900 rounded-xl p-6 shadow-xl border border-neutral-800 relative overflow-hidden">
+                        <div className="hidden md:block">
+                            <Meteors
+                                className="absolute inset-0 z-0"
+                                number={20}
+                                angle={65}
+                            />
+                        </div>
+
+                        <div className="relative z-10">
+                            <div className="flex items-center gap-3 mb-4">
+                                <div className="p-2 bg-neutral-800 rounded-lg">
+                                    <MessageCircle
+                                        size={20}
+                                        className="text-neutral-300"
+                                    />
+                                </div>
+                                <h3 className="text-lg font-semibold text-neutral-200">
+                                    Connect With Me
+                                </h3>
+                            </div>
+
+                            <p className="text-neutral-400 text-sm mb-6">
+                                Follow me on social platforms to stay updated
+                                with my latest projects and insights.
+                            </p>
+
+                            <div className="flex items-center gap-4">
+                                {socials.map((social) => (
+                                    <Link
+                                        href={social.link}
+                                        key={social.name}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="p-3 bg-neutral-800 rounded-lg text-neutral-400 hover:text-neutral-200 hover:bg-neutral-700 transition-all duration-300 hover:scale-105"
+                                        title={social.name}
+                                    >
+                                        {social.icon}
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Quick Info Card */}
+                    <div className="bg-neutral-900 rounded-xl p-6 shadow-xl border border-neutral-800">
+                        <div className="flex items-center gap-3 mb-4">
+                            <div className="p-2 bg-neutral-800 rounded-lg">
+                                <Mail size={20} className="text-neutral-300" />
+                            </div>
+                            <h3 className="text-lg font-semibold text-neutral-200">
+                                Quick Contact
+                            </h3>
+                        </div>
+
+                        <div className="space-y-3 text-sm">
+                            <div className="flex justify-between">
+                                <span className="text-neutral-400">
+                                    Response Time:
+                                </span>
+                                <span className="text-neutral-300">
+                                    Within 24 hours
+                                </span>
+                            </div>
+                            <div className="flex justify-between">
+                                <span className="text-neutral-400">
+                                    Location:
+                                </span>
+                                <span className="text-neutral-300">India</span>
+                            </div>
+                            <div className="flex justify-between">
+                                <span className="text-neutral-400">
+                                    Availability:
+                                </span>
+                                <span className="text-green-400">
+                                    Open to work
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* Footer */}
+            <div className="text-center mt-12 relative z-10">
+                <p className="text-neutral-500 text-sm">
+                    I&apos;m always excited to discuss new opportunities and
+                    interesting projects.
+                </p>
             </div>
         </div>
     );

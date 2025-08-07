@@ -25,7 +25,15 @@ export default function CardDemo({
     index = 0,
 }: CardProps) {
     const videoRef = useRef<HTMLVideoElement>(null);
+    const imageRef = useRef<HTMLImageElement>(null);
     const [isInView, setIsInView] = useState(false);
+    const [isMediaLoaded, setIsMediaLoaded] = useState(false);
+
+    // Check if the media is a video or image
+    const isVideo =
+        video.includes(".mp4") ||
+        video.includes(".webm") ||
+        video.includes(".mov");
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -43,16 +51,21 @@ export default function CardDemo({
             }
         );
 
-        if (videoRef.current) {
-            observer.observe(videoRef.current);
+        const mediaRef = isVideo ? videoRef.current : imageRef.current;
+        if (mediaRef) {
+            observer.observe(mediaRef);
         }
 
         return () => {
-            if (videoRef.current) {
-                observer.unobserve(videoRef.current);
+            if (mediaRef) {
+                observer.unobserve(mediaRef);
             }
         };
-    }, []);
+    }, [isVideo]);
+
+    const handleMediaLoad = () => {
+        setIsMediaLoaded(true);
+    };
 
     return (
         <motion.div
@@ -64,22 +77,51 @@ export default function CardDemo({
                 delay: index * 0.05,
             }}
         >
-            <Card className="bg-neutral-900 border-none h-full  ">
+            <Card className="bg-neutral-900 border-none h-full">
                 <div className="h-full w-full flex flex-col justify-start gap-3 relative">
-                    <video
-                        ref={videoRef}
-                        src={isInView ? video : undefined}
-                        loop
-                        autoPlay={isInView}
-                        muted
-                        poster={video}
-                        className="h-[20vh] object-cover rounded-xl
-          shadow-xl mb-3"
-                        preload="none"
-                    />
-                    <div className="flex flex-col justify-between ml-1 ">
-                        <div className="flex items-center justify-between -mt-5 ">
-                            <CardTitle className="text-neutral-200  ">
+                    <div className="relative h-[20vh] rounded-xl overflow-hidden mb-3">
+                        {/* Loading Animation */}
+                        {!isMediaLoaded && (
+                            <div className="absolute inset-0 bg-neutral-800 rounded-xl flex items-center justify-center">
+                                <div className="animate-spin rounded-full h-8 w-8 border-2 border-neutral-600 border-t-neutral-400"></div>
+                            </div>
+                        )}
+
+                        {/* Render Video or Image based on file type */}
+                        {isVideo ? (
+                            <video
+                                ref={videoRef}
+                                src={isInView ? video : undefined}
+                                loop
+                                autoPlay={isInView}
+                                muted
+                                poster={video}
+                                className={cn(
+                                    "h-[20vh] object-cover rounded-xl shadow-xl transition-opacity duration-300",
+                                    isMediaLoaded ? "opacity-100" : "opacity-0"
+                                )}
+                                preload="none"
+                                onLoadedData={handleMediaLoad}
+                                onCanPlay={handleMediaLoad}
+                            />
+                        ) : (
+                            <img
+                                ref={imageRef}
+                                src={isInView ? video : undefined}
+                                alt={title}
+                                className={cn(
+                                    "h-[20vh] w-full object-cover rounded-xl shadow-xl transition-opacity duration-300",
+                                    isMediaLoaded ? "opacity-100" : "opacity-0"
+                                )}
+                                onLoad={handleMediaLoad}
+                                onError={handleMediaLoad}
+                            />
+                        )}
+                    </div>
+
+                    <div className="flex flex-col justify-between ml-1">
+                        <div className="flex items-center justify-between -mt-5">
+                            <CardTitle className="text-neutral-200">
                                 {title}
                             </CardTitle>
                             <div className="flex items-center gap-2">
@@ -87,7 +129,7 @@ export default function CardDemo({
                                     <Link
                                         href={link}
                                         target="_blank"
-                                        className="text-neutral-400 hover:text-neutral-200 transition-all duration-300 pr-4 pb-[2px] "
+                                        className="text-neutral-400 hover:text-neutral-200 transition-all duration-300 pr-4 pb-[2px]"
                                     >
                                         <Share size={16} />
                                     </Link>
@@ -96,7 +138,7 @@ export default function CardDemo({
                                     <Link
                                         href={github}
                                         target="_blank"
-                                        className="text-neutral-400 hover:text-neutral-200 transition-all duration-300 pr-4 pb-[2px] "
+                                        className="text-neutral-400 hover:text-neutral-200 transition-all duration-300 pr-4 pb-[2px]"
                                     >
                                         <Github size={16} />
                                     </Link>
@@ -106,11 +148,11 @@ export default function CardDemo({
                         <CardDescription className="text-neutral-400 border-t border-neutral-800 pt-2">
                             {description}
                         </CardDescription>
-                        <div className="flex flex-wrap gap-2 mt-4  bottom-2">
+                        <div className="flex flex-wrap gap-2 mt-4 bottom-2">
                             {tags?.map((tag) => (
                                 <div
                                     key={tag}
-                                    className="bg-neutral-800 text-neutral-400 px-2 py-1  rounded text-xs font-medium hover:text-neutral-300 duration-300 "
+                                    className="bg-neutral-800 text-neutral-400 px-2 py-1 rounded text-xs font-medium hover:text-neutral-300 duration-300"
                                 >
                                     {tag}
                                 </div>
