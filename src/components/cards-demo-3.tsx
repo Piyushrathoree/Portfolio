@@ -1,9 +1,10 @@
 "use client";
 
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { Github, Share } from "lucide-react";
+import { motion } from "framer-motion";
 interface CardProps {
     title: string;
     description: string;
@@ -11,6 +12,7 @@ interface CardProps {
     link?: string;
     github?: string;
     tags?: string[];
+    index?: number;
 }
 
 export default function CardDemo({
@@ -20,62 +22,104 @@ export default function CardDemo({
     link,
     github,
     tags,
+    index = 0,
 }: CardProps) {
+    const videoRef = useRef<HTMLVideoElement>(null);
+    const [isInView, setIsInView] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setIsInView(true);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            {
+                threshold: 0.1,
+                rootMargin: "50px",
+            }
+        );
+
+        if (videoRef.current) {
+            observer.observe(videoRef.current);
+        }
+
+        return () => {
+            if (videoRef.current) {
+                observer.unobserve(videoRef.current);
+            }
+        };
+    }, []);
+
     return (
-        <Card className="bg-neutral-900 border-none h-full  ">
-            <div className="h-full w-full flex flex-col justify-start gap-3 relative">
-                <video
-                    src={video}
-                    loop
-                    autoPlay
-                    muted
-                    poster={video}
-                    className="h-[20vh] object-cover rounded-xl
+        <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+                duration: 0.5,
+                ease: "easeOut",
+                delay: index * 0.05,
+            }}
+        >
+            <Card className="bg-neutral-900 border-none h-full  ">
+                <div className="h-full w-full flex flex-col justify-start gap-3 relative">
+                    <video
+                        ref={videoRef}
+                        src={isInView ? video : undefined}
+                        loop
+                        autoPlay={isInView}
+                        muted
+                        poster={video}
+                        className="h-[20vh] object-cover rounded-xl
           shadow-xl mb-3"
-                    preload="none"
-                />
-                <div className="flex flex-col justify-between ml-1 ">
-                    <div className="flex items-center justify-between -mt-5 ">
-                        <CardTitle className="text-neutral-200  ">
-                            {title}
-                        </CardTitle>
-                        <div className="flex items-center gap-2">
-                            {link && (
-                                <Link
-                                    href={link}
-                                    target="_blank"
-                                    className="text-neutral-400 hover:text-neutral-200 transition-all duration-300 pr-4 pb-[2px] "
+                        preload="none"
+                    />
+                    <div className="flex flex-col justify-between ml-1 ">
+                        <div className="flex items-center justify-between -mt-5 ">
+                            <CardTitle className="text-neutral-200  ">
+                                {title}
+                            </CardTitle>
+                            <div className="flex items-center gap-2">
+                                {link && (
+                                    <Link
+                                        href={link}
+                                        target="_blank"
+                                        className="text-neutral-400 hover:text-neutral-200 transition-all duration-300 pr-4 pb-[2px] "
+                                    >
+                                        <Share size={16} />
+                                    </Link>
+                                )}
+                                {github && (
+                                    <Link
+                                        href={github}
+                                        target="_blank"
+                                        className="text-neutral-400 hover:text-neutral-200 transition-all duration-300 pr-4 pb-[2px] "
+                                    >
+                                        <Github size={16} />
+                                    </Link>
+                                )}
+                            </div>
+                        </div>
+                        <CardDescription className="text-neutral-400 border-t border-neutral-800 pt-2">
+                            {description}
+                        </CardDescription>
+                        <div className="flex flex-wrap gap-2 mt-4  bottom-2">
+                            {tags?.map((tag) => (
+                                <div
+                                    key={tag}
+                                    className="bg-neutral-800 text-neutral-400 px-2 py-1  rounded text-xs font-medium hover:text-neutral-300 duration-300 "
                                 >
-                                    <Share size={16} />
-                                </Link>
-                            )}
-                            {github && (
-                                <Link
-                                    href={github}
-                                    target="_blank"
-                                    className="text-neutral-400 hover:text-neutral-200 transition-all duration-300 pr-4 pb-[2px] "
-                                >
-                                    <Github size={16} />
-                                </Link>
-                            )}
+                                    {tag}
+                                </div>
+                            ))}
                         </div>
                     </div>
-                    <CardDescription className="text-neutral-400 border-t border-neutral-800 pt-2">
-                        {description}
-                    </CardDescription>
-                    <div className="flex flex-wrap gap-2 mt-4  bottom-2">
-                        {tags?.map((tag) => (
-                            <div
-                                key={tag}
-                                className="bg-neutral-800 text-neutral-400 px-2 py-1  rounded text-xs font-medium hover:text-neutral-300 duration-300 "
-                            >
-                                {tag}
-                            </div>
-                        ))}
-                    </div>
                 </div>
-            </div>
-        </Card>
+            </Card>
+        </motion.div>
     );
 }
 

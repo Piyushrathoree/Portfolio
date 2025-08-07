@@ -70,11 +70,11 @@ export default function Home() {
         },
     ];
     return (
-        <div className="min-h-screen w-full overflow-hidden relative ">
+        <div className="min-h-screen w-full max-w-4xl mx-auto overflow-hidden relative px-4">
             <Meteors number={40} className="absolute inset-0 " />
 
             <motion.div
-                className="flex mt-24 md:mt-32 flex-col gap-4 w-full items-start  justify-center px-5 "
+                className="flex mt-24 md:mt-32 flex-col gap-4 w-full items-start justify-center"
                 variants={containerVariants}
                 initial="hidden"
                 animate="show"
@@ -138,9 +138,9 @@ export default function Home() {
                 </motion.div>
                 <motion.div
                     variants={itemVariants}
-                    className="justify-start w-full flex flex-col md:flex-row items-center -mb-5 gap-5"
+                    className="justify-start w-full flex flex-col md:flex-row items-center -mb-5 gap-14 sm:ml-3 -ml-1"
                 >
-                    {Projects.map((project) => (
+                    {Projects.map((project, index) => (
                         <CardDemo
                             key={project.title}
                             title={project.title}
@@ -149,6 +149,7 @@ export default function Home() {
                             link={project.link}
                             github={project.github}
                             tags={project.tags}
+                            index={index}
                         />
                     ))}
                 </motion.div>
@@ -157,7 +158,7 @@ export default function Home() {
                     variants={itemVariants}
                     className="w-full h-[1px] bg-neutral-800 mt-14"
                 />
-                <motion.div variants={itemVariants} className="w-full">
+                <motion.div variants={itemVariants} className="w-full pl-4 max-md:pr-6">
                     <ShowcaseCard1 />
                 </motion.div>
                 <motion.div

@@ -81,7 +81,7 @@ const page = () => {
     ];
 
     return (
-        <div className="flex flex-col justify-start items-start min-h-screen mt-20 md:py-10 md:pl-10 pl-5 overflow-x-hidden">
+        <div className="flex flex-col justify-start items-start min-h-screen mt-20 max-w-4xl mx-auto px-4 overflow-x-hidden">
             {/* Location Button */}
             <div className="flex  gap-4 items-start justify-center ">
                 <ScrollFadeIn>
