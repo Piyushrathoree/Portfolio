@@ -5,28 +5,18 @@ import React from "react";
 
 const Navbar = () => {
     return (
-        <nav className="fixed top-0 sm:left-14 w-full md:px-[27%] px-4 h-16 bg-transparent text-neutral-300 max-md:bg-neutral-900/90 backdrop-blur-sm flex justify-between items-center z-100   ">
-            <Link href="/">
-                <div className="flex items-center gap-2">
-                    {" "}
-                    <div className="flex flex-col gap-1 ">
-                        <div className=" relative">
-                            <Image
-                                src="/myImage.jpg"
-                                alt="heroImage"
-                                width={40}
-                                height={40}
-                                className="rounded-full filter "
-                                loading="lazy"
-                            />
-                        </div>
-                    </div>
-                    <div>
-                        <div className="text-lg  font-semibold ">
-                            Piyush Rathore
-                        </div>
-                        <div className="text-[13px]">Software Engineer</div>
-                    </div>
+        <nav className="fixed top-6 left-6 z-50">
+            <Link href="/" className="group">
+                <div className="relative">
+                    <Image
+                        src="/myImage.jpg"
+                        alt="Piyush Rathore"
+                        width={40}
+                        height={40}
+                        className="rounded-full border border-white/20 hover:border-white/40 transition-colors duration-300"
+                        loading="lazy"
+                    />
+                    <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-green-500 rounded-full border border-black/20" />
                 </div>
             </Link>
         </nav>

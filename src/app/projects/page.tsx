@@ -115,8 +115,20 @@ const page = () => {
     return (
         <div className="flex flex-col justify-between relative mb-10 min-h-screen max-w-4xl mx-auto px-4">
             <div className="mt-24">
-                <div className="text-3xl md:text-4xl font-semibold text-neutral-300">
-                    Projects
+                <div className="text-center mb-12">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-neutral-900 border border-neutral-800 text-neutral-400 text-sm mb-6">
+                        <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                        Portfolio Showcase
+                    </div>
+                    <div className="text-4xl md:text-5xl font-bold text-neutral-100 mb-4">
+                        Featured Projects
+                    </div>
+                    <p className="text-lg text-neutral-400 max-w-2xl mx-auto leading-relaxed">
+                        A collection of my recent work showcasing full-stack
+                        development, AI integration, and modern web
+                        technologies. Each project represents a unique challenge
+                        and solution.
+                    </p>
                 </div>
                 <div className="bg-transparent mt-10">
                     <div className="grid md:grid-cols-2 w-full gap-10 items-start justify-center mb-10">

@@ -36,7 +36,7 @@ export default function RootLayout({
             >
                 <Navbar />
                 <main className="flex-1">
-                    <div className="w-full h-full sm:px-[26%] font-custom">
+                    <div className="w-full h-full font-custom">
                         {children}
                         <NavDock />
                     </div>

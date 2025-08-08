@@ -1,5 +1,6 @@
 import SkillsCard from "@/components/SkillsCard";
 import Image from "next/image";
+import { GridPattern } from "@/components/magicui/grid-pattern";
 
 const Frontend = [
     {
@@ -153,7 +154,7 @@ const Backend = [
             />
         ),
         title: "Prisma",
-        description: "ORM  and PostgreSQL",
+        description: "ORM and PostgreSQL",
         tags: ["ORM", "PostgreSQL"],
     },
     {
@@ -172,6 +173,7 @@ const Backend = [
         tags: ["WebSockets", "WebRTC"],
     },
 ];
+
 const Tools = [
     {
         icon: (
@@ -249,6 +251,7 @@ const Tools = [
         tags: ["AI", "UI Generation"],
     },
 ];
+
 const Devops = [
     {
         icon: (
@@ -278,10 +281,11 @@ const Devops = [
         ),
         title: "Vercel",
         description:
-            "Serverless platform for static sites and0serverless functions",
+            "Serverless platform for static sites and serverless functions",
         tags: ["Serverless", "Deployment"],
     },
 ];
+
 const ProgrammingLanguages = [
     {
         icon: (
@@ -340,92 +344,236 @@ const ProgrammingLanguages = [
             />
         ),
         title: "C++",
-        description: "low level programming language",
+        description: "Low level programming language",
         tags: ["C++", "Language"],
     },
 ];
+
 export default function SkillsPage() {
     return (
-        <div className="min-h-screen flex flex-col items-start justify-start pt-24 px-4 w-full max-w-4xl mx-auto">
-            <h1 className="text-4xl font-bold text-neutral-200 mb-4 mt-5">
-                Skills & Tools
-            </h1>
-            <p className="text-neutral-400 mb-8 max-w-xl">
-                A curated list of my favorite technologies and tools I use to
-                build modern web applications.
-            </p>
+        <div className="min-h-screen bg-[#141414] relative">
+            <GridPattern
+                width={32}
+                height={32}
+                x={-1}
+                y={-1}
+                strokeDasharray="4 2"
+                className="absolute inset-0 h-full w-full stroke-neutral-800/30 [mask-image:radial-gradient(800px_circle_at_center,white,transparent)]"
+            />
 
-            <div className="text-2xl font-bold text-neutral-200 mb-4 mt-5 w-full">
-                <div className="border border-neutral-800 p-4 rounded-tr-lg rounded-tl-lg bg-[#1b1b1b]">
-                    Backend Technologies
+            <div className="max-w-4xl mx-auto px-4 py-24 relative">
+                {/* Hero Section */}
+                <div className="text-center mb-20">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-neutral-900 border border-neutral-800 text-neutral-400 text-sm mb-6">
+                        <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
+                        Technical Expertise
+                    </div>
+                    <h1 className="text-5xl md:text-6xl font-bold text-neutral-100 mb-6">
+                        Skills & Technologies
+                    </h1>
+                    <p className="text-xl text-neutral-400 max-w-3xl mx-auto leading-relaxed">
+                        Building modern applications with cutting-edge
+                        technologies and proven methodologies.
+                    </p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 border border-neutral-800 px-4 md:px-6 lg:px-10 pt-4 pb-5 rounded-br-lg rounded-bl-lg w-full">
-                    {Backend.map((skill) => (
-                        <SkillsCard
-                            key={skill.title}
-                            {...skill}
-                            tags={skill.tags}
-                        />
-                    ))}
-                </div>
-            </div>
-            <div className="text-2xl font-bold text-neutral-200 mb-4 mt-5 w-full">
-                <div className="border border-neutral-800 p-4 rounded-tr-lg rounded-tl-lg bg-[#1b1b1b]">
-                    Frontend Technologies
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 border border-neutral-800 px-4 md:px-6 lg:px-10 pt-4 pb-5 rounded-br-lg rounded-bl-lg w-full">
-                    {Frontend.map((skill) => (
-                        <SkillsCard
-                            key={skill.title}
-                            {...skill}
-                            tags={skill.tags}
-                        />
-                    ))}
-                </div>
-            </div>
 
-            <div className="text-2xl font-bold text-neutral-200 mb-4 mt-5 w-full">
-                <div className="border border-neutral-800 p-4 rounded-tr-lg rounded-tl-lg bg-[#1b1b1b]">
-                    Development Tools
+                {/* Stats Section */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
+                    <div className="text-center p-6 bg-neutral-900 rounded-2xl border border-neutral-800 hover:border-neutral-700 transition-colors duration-300">
+                        <div className="text-3xl font-bold text-blue-400 mb-2">
+                            5+
+                        </div>
+                        <div className="text-sm text-neutral-400">
+                            Frontend Tech
+                        </div>
+                    </div>
+                    <div className="text-center p-6 bg-neutral-900 rounded-2xl border border-neutral-800 hover:border-neutral-700 transition-colors duration-300">
+                        <div className="text-3xl font-bold text-green-400 mb-2">
+                            6+
+                        </div>
+                        <div className="text-sm text-neutral-400">
+                            Backend Tech
+                        </div>
+                    </div>
+                    <div className="text-center p-6 bg-neutral-900 rounded-2xl border border-neutral-800 hover:border-neutral-700 transition-colors duration-300">
+                        <div className="text-3xl font-bold text-purple-400 mb-2">
+                            5+
+                        </div>
+                        <div className="text-sm text-neutral-400">
+                            Dev Tools
+                        </div>
+                    </div>
+                    <div className="text-center p-6 bg-neutral-900 rounded-2xl border border-neutral-800 hover:border-neutral-700 transition-colors duration-300">
+                        <div className="text-3xl font-bold text-orange-400 mb-2">
+                            4+
+                        </div>
+                        <div className="text-sm text-neutral-400">
+                            Languages
+                        </div>
+                    </div>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 border border-neutral-800 px-4 md:px-6 lg:px-10 pt-4 pb-5 rounded-br-lg rounded-bl-lg w-full">
-                    {Tools.map((skill) => (
-                        <SkillsCard
-                            key={skill.title}
-                            {...skill}
-                            tags={skill.tags}
-                        />
-                    ))}
-                </div>
-            </div>
 
-            <div className="text-2xl font-bold text-neutral-200 mb-4 mt-5 w-full">
-                <div className="border border-neutral-800 p-4 rounded-tr-lg rounded-tl-lg bg-[#1b1b1b]">
-                    DevOps
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 border border-neutral-800 px-4 md:px-6 lg:px-10 pt-4 pb-5 rounded-br-lg rounded-bl-lg w-full">
-                    {Devops.map((skill) => (
-                        <SkillsCard
-                            key={skill.title}
-                            {...skill}
-                            tags={skill.tags}
-                        />
-                    ))}
-                </div>
-            </div>
+                {/* Skills Sections with Creative Layout */}
+                <div className="space-y-16">
+                    {/* Frontend Technologies */}
+                    <div className="bg-neutral-900 rounded-3xl p-8 border border-neutral-800">
+                        <div className="flex items-center gap-4 mb-8">
+                            <div className="w-12 h-12 bg-blue-500/20 rounded-2xl flex items-center justify-center">
+                                <span className="text-2xl">🎨</span>
+                            </div>
+                            <div>
+                                <h2 className="text-2xl font-bold text-neutral-100">
+                                    Frontend Technologies
+                                </h2>
+                                <p className="text-neutral-400">
+                                    Creating beautiful user interfaces
+                                </p>
+                            </div>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            {Frontend.map((skill) => (
+                                <SkillsCard
+                                    key={skill.title}
+                                    {...skill}
+                                    tags={skill.tags}
+                                />
+                            ))}
+                        </div>
+                    </div>
 
-            <div className="text-2xl font-bold text-neutral-200 mb-4 mt-5 w-full">
-                <div className="border border-neutral-800 p-4 rounded-tr-lg rounded-tl-lg bg-[#1b1b1b]">
-                    Programming Languages
+                    {/* Backend Technologies */}
+                    <div className="bg-neutral-900 rounded-3xl p-8 border border-neutral-800">
+                        <div className="flex items-center gap-4 mb-8">
+                            <div className="w-12 h-12 bg-green-500/20 rounded-2xl flex items-center justify-center">
+                                <span className="text-2xl">⚙️</span>
+                            </div>
+                            <div>
+                                <h2 className="text-2xl font-bold text-neutral-100">
+                                    Backend Technologies
+                                </h2>
+                                <p className="text-neutral-400">
+                                    Building robust server-side solutions
+                                </p>
+                            </div>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            {Backend.map((skill) => (
+                                <SkillsCard
+                                    key={skill.title}
+                                    {...skill}
+                                    tags={skill.tags}
+                                />
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Two Column Layout for Smaller Categories */}
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        {/* Development Tools */}
+                        <div className="bg-neutral-900 rounded-3xl p-8 border border-neutral-800">
+                            <div className="flex items-center gap-4 mb-8">
+                                <div className="w-12 h-12 bg-purple-500/20 rounded-2xl flex items-center justify-center">
+                                    <span className="text-2xl">🛠️</span>
+                                </div>
+                                <div>
+                                    <h2 className="text-xl font-bold text-neutral-100">
+                                        Development Tools
+                                    </h2>
+                                    <p className="text-sm text-neutral-400">
+                                        Essential development utilities
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="space-y-4">
+                                {Tools.map((skill) => (
+                                    <SkillsCard
+                                        key={skill.title}
+                                        {...skill}
+                                        tags={skill.tags}
+                                    />
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Programming Languages */}
+                        <div className="bg-neutral-900 rounded-3xl p-8 border border-neutral-800">
+                            <div className="flex items-center gap-4 mb-8">
+                                <div className="w-12 h-12 bg-orange-500/20 rounded-2xl flex items-center justify-center">
+                                    <span className="text-2xl">💻</span>
+                                </div>
+                                <div>
+                                    <h2 className="text-xl font-bold text-neutral-100">
+                                        Programming Languages
+                                    </h2>
+                                    <p className="text-sm text-neutral-400">
+                                        Core programming expertise
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="space-y-4">
+                                {ProgrammingLanguages.map((skill) => (
+                                    <SkillsCard
+                                        key={skill.title}
+                                        {...skill}
+                                        tags={skill.tags}
+                                    />
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* DevOps - Full Width */}
+                    <div className="bg-neutral-900 rounded-3xl p-8 border border-neutral-800">
+                        <div className="flex items-center gap-4 mb-8">
+                            <div className="w-12 h-12 bg-red-500/20 rounded-2xl flex items-center justify-center">
+                                <span className="text-2xl">🚀</span>
+                            </div>
+                            <div>
+                                <h2 className="text-2xl font-bold text-neutral-100">
+                                    DevOps & Deployment
+                                </h2>
+                                <p className="text-neutral-400">
+                                    Streamlined deployment and operations
+                                </p>
+                            </div>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            {Devops.map((skill) => (
+                                <SkillsCard
+                                    key={skill.title}
+                                    {...skill}
+                                    tags={skill.tags}
+                                />
+                            ))}
+                        </div>
+                    </div>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 border border-neutral-800 px-4 md:px-6 lg:px-10 pt-4 pb-5 rounded-br-lg rounded-bl-lg w-full">
-                    {ProgrammingLanguages.map((skill) => (
-                        <SkillsCard
-                            key={skill.title}
-                            {...skill}
-                            tags={skill.tags}
-                        />
-                    ))}
+
+                {/* Call to Action */}
+                <div className="mt-20 text-center">
+                    <div className="bg-gradient-to-br from-neutral-600/10 to-neutral-900/10  rounded-3xl p-12 border border-neutral-800">
+                        <h3 className="text-3xl font-bold text-neutral-100 mb-4">
+                            Ready to Build Something Amazing?
+                        </h3>
+                        <p className="text-lg text-neutral-400 mb-8 max-w-2xl mx-auto">
+                            Let&apos;s combine these technologies to create
+                            innovative solutions that make a real impact.
+                        </p>
+                        <div className="flex flex-wrap justify-center gap-4">
+                            <a
+                                href="/contact"
+                                className="px-8 py-4 bg-neutral-800 hover:bg-neutral-900 text-neutral-200 border border-neutral-700 rounded-xl font-semibold transition-all duration-300 hover:scale-103 "
+                            >
+                                Start a Project
+                            </a>
+                            <a
+                                href="/projects"
+                                className="px-8 py-4 bg-neutral-800 hover:bg-neutral-900 text-neutral-200 border border-neutral-700 rounded-xl font-semibold transition-all duration-300 hover:scale-103 "
+                            >
+                                View My Work
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

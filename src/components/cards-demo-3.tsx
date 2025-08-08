@@ -3,8 +3,10 @@
 import React, { useRef, useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { Github, Share } from "lucide-react";
+import { Github, ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
+
 interface CardProps {
     title: string;
     description: string;
@@ -51,14 +53,17 @@ export default function CardDemo({
             }
         );
 
-        const mediaRef = isVideo ? videoRef.current : imageRef.current;
-        if (mediaRef) {
-            observer.observe(mediaRef);
+        // Only observe videos for lazy loading, images load immediately
+        if (isVideo && videoRef.current) {
+            observer.observe(videoRef.current);
+        } else if (!isVideo) {
+            // For images, set isInView to true immediately
+            setIsInView(true);
         }
 
         return () => {
-            if (mediaRef) {
-                observer.unobserve(mediaRef);
+            if (isVideo && videoRef.current) {
+                observer.unobserve(videoRef.current);
             }
         };
     }, [isVideo]);
@@ -77,170 +82,108 @@ export default function CardDemo({
                 delay: index * 0.05,
             }}
         >
-            <Card className="bg-neutral-900 border-none h-full">
-                <div className="h-full w-full flex flex-col justify-start gap-3 relative">
-                    <div className="relative h-[20vh] rounded-xl overflow-hidden mb-3">
-                        {/* Loading Animation */}
-                        {!isMediaLoaded && (
-                            <div className="absolute inset-0 bg-neutral-800 rounded-xl flex items-center justify-center">
-                                <div className="animate-spin rounded-full h-8 w-8 border-2 border-neutral-600 border-t-neutral-400"></div>
-                            </div>
-                        )}
+            <div className="bg-neutral-900 rounded-3xl p-6 shadow-xl border border-neutral-800 h-full flex flex-col">
+                {/* Media Section with Padding */}
+                <div className="relative w-full h-[180px] sm:h-[200px] md:h-[220px] mb-6 rounded-lg overflow-hidden bg-neutral-800">
+                    {/* Loading Animation */}
+                    {!isMediaLoaded && (
+                        <div className="absolute inset-0 bg-neutral-800 flex items-center justify-center">
+                            <div className="animate-spin rounded-full h-8 w-8 border-2 border-neutral-600 border-t-neutral-400"></div>
+                        </div>
+                    )}
 
-                        {/* Render Video or Image based on file type */}
-                        {isVideo ? (
-                            <video
-                                ref={videoRef}
-                                src={isInView ? video : undefined}
-                                loop
-                                autoPlay={isInView}
-                                muted
-                                poster={video}
-                                className={cn(
-                                    "h-[20vh] object-cover rounded-xl shadow-xl transition-opacity duration-300",
-                                    isMediaLoaded ? "opacity-100" : "opacity-0"
-                                )}
-                                preload="none"
-                                onLoadedData={handleMediaLoad}
-                                onCanPlay={handleMediaLoad}
-                            />
-                        ) : (
-                            <img
-                                ref={imageRef}
-                                src={isInView ? video : undefined}
-                                alt={title}
-                                className={cn(
-                                    "h-[20vh] w-full object-cover rounded-xl shadow-xl transition-opacity duration-300",
-                                    isMediaLoaded ? "opacity-100" : "opacity-0"
-                                )}
-                                onLoad={handleMediaLoad}
-                                onError={handleMediaLoad}
-                            />
-                        )}
+                    {/* Media Content */}
+                    {isVideo ? (
+                        <video
+                            ref={videoRef}
+                            src={isInView ? video : undefined}
+                            loop
+                            autoPlay={isInView}
+                            muted
+                            poster={video}
+                            playsInline
+                            className={cn(
+                                "w-full h-full object-cover rounded-lg transition-opacity duration-300",
+                                isMediaLoaded ? "opacity-100" : "opacity-0"
+                            )}
+                            preload="none"
+                            onLoadedData={handleMediaLoad}
+                            onCanPlay={handleMediaLoad}
+                        />
+                    ) : (
+                        <Image
+                            ref={imageRef}
+                            src={video}
+                            alt={title}
+                            width={400}
+                            height={300}
+                            className={cn(
+                                "w-full h-full object-cover rounded-lg transition-opacity duration-300",
+                                isMediaLoaded ? "opacity-100" : "opacity-0"
+                            )}
+                            onLoad={handleMediaLoad}
+                            onError={handleMediaLoad}
+                        />
+                    )}
+                </div>
+
+                {/* Content Section */}
+                <div className="flex-1 flex flex-col">
+                    {/* Title and Links */}
+                    <div className="flex items-start justify-between mb-3">
+                        <h3 className="text-lg font-semibold text-neutral-200 leading-tight">
+                            {title}
+                        </h3>
+                        <div className="flex items-center gap-2 ml-4">
+                            {link && (
+                                <Link
+                                    href={link}
+                                    target="_blank"
+                                    className="p-2 text-neutral-400 hover:text-neutral-200 hover:bg-neutral-800 rounded-lg transition-all duration-200"
+                                    title="Live Demo"
+                                >
+                                    <ExternalLink size={16} />
+                                </Link>
+                            )}
+                            {github && (
+                                <Link
+                                    href={github}
+                                    target="_blank"
+                                    className="p-2 text-neutral-400 hover:text-neutral-200 hover:bg-neutral-800 rounded-lg transition-all duration-200"
+                                    title="View Code"
+                                >
+                                    <Github size={16} />
+                                </Link>
+                            )}
+                        </div>
                     </div>
 
-                    <div className="flex flex-col justify-between ml-1">
-                        <div className="flex items-center justify-between -mt-5">
-                            <CardTitle className="text-neutral-200">
-                                {title}
-                            </CardTitle>
-                            <div className="flex items-center gap-2">
-                                {link && (
-                                    <Link
-                                        href={link}
-                                        target="_blank"
-                                        className="text-neutral-400 hover:text-neutral-200 transition-all duration-300 pr-4 pb-[2px]"
-                                    >
-                                        <Share size={16} />
-                                    </Link>
-                                )}
-                                {github && (
-                                    <Link
-                                        href={github}
-                                        target="_blank"
-                                        className="text-neutral-400 hover:text-neutral-200 transition-all duration-300 pr-4 pb-[2px]"
-                                    >
-                                        <Github size={16} />
-                                    </Link>
-                                )}
-                            </div>
-                        </div>
-                        <CardDescription className="text-neutral-400 border-t border-neutral-800 pt-2">
-                            {description}
-                        </CardDescription>
-                        <div className="flex flex-wrap gap-2 mt-4 bottom-2">
-                            {tags?.map((tag) => (
-                                <div
+                    {/* Description */}
+                    <p className="text-neutral-400 text-sm leading-relaxed mb-4 flex-1">
+                        {description}
+                    </p>
+
+                    {/* Tags */}
+                    {tags && tags.length > 0 && (
+                        <div className="flex flex-wrap gap-2">
+                            {tags.map((tag, tagIndex) => (
+                                <motion.span
                                     key={tag}
-                                    className="bg-neutral-800 text-neutral-400 px-2 py-1 rounded text-xs font-medium hover:text-neutral-300 duration-300"
+                                    initial={{ opacity: 0, scale: 0.8 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    transition={{
+                                        delay: index * 0.05 + tagIndex * 0.1,
+                                        duration: 0.3,
+                                    }}
+                                    className="px-3 py-1 bg-neutral-800 text-neutral-300 text-xs font-medium rounded-md border border-neutral-700 hover:border-neutral-600 transition-colors duration-200"
                                 >
                                     {tag}
-                                </div>
+                                </motion.span>
                             ))}
                         </div>
-                    </div>
+                    )}
                 </div>
-            </Card>
+            </div>
         </motion.div>
     );
 }
-
-export const Card = ({
-    className,
-    children,
-}: {
-    className?: string;
-    children: React.ReactNode;
-}) => {
-    return (
-        <div
-            className={cn(
-                "max-w-sm w-full mx-auto p-4 rounded-xl shadow shadow-neutral-600 ",
-                className
-            )}
-        >
-            {children}
-        </div>
-    );
-};
-
-export const CardTitle = ({
-    children,
-    className,
-}: {
-    children: React.ReactNode;
-    className?: string;
-}) => {
-    return (
-        <h3
-            className={cn(
-                "text-lg font-semibold text-gray-800 dark:text-white py-2",
-                className
-            )}
-        >
-            {children}
-        </h3>
-    );
-};
-
-export const CardDescription = ({
-    children,
-    className,
-}: {
-    children: React.ReactNode;
-    className?: string;
-}) => {
-    return (
-        <p
-            className={cn(
-                "text-sm font-normal text-neutral-600 dark:text-neutral-400 max-w-sm",
-                className
-            )}
-        >
-            {children}
-        </p>
-    );
-};
-
-export const CardSkeletonContainer = ({
-    className,
-    children,
-    showGradient = true,
-}: {
-    className?: string;
-    children: React.ReactNode;
-    showGradient?: boolean;
-}) => {
-    return (
-        <div
-            className={cn(
-                "h-[15rem] md:h-[20rem] rounded-xl ",
-                className,
-                showGradient &&
-                    "bg-neutral-300 dark:bg-[rgba(40,40,40,0.70)] [mask-image:radial-gradient(50%_50%_at_50%_50%,white_0%,transparent_100%)]"
-            )}
-        >
-            {children}
-        </div>
-    );
-};
