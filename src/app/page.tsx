@@ -143,7 +143,7 @@ export default function Home() {
                             </Button>
                             <Button className="bg-neutral-800 hover:bg-neutral-900 text-neutral-200 border border-neutral-700 px-6 py-2 rounded-lg transition-all duration-300 hover:scale-105">
                                 <Download size={16} className="mr-2" />
-                                <Link href="/resume.pdf" target="_blank">
+                                <Link href="https://drive.google.com/file/d/1sjgROFLMxgDNG09ubRQpVz8e5icQ4mC2/view?usp=drivesdk" target="_blank">
                                     Resume
                                 </Link>
                             </Button>
