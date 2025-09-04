@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 
 const ShowcaseCard3 = () => {
-    return (
+    return ( <Link href="/projects">
         <div className="bg-neutral-900 rounded-xl p-6 shadow-xl border border-neutral-800 hover:border-neutral-700 transition-all duration-300 group relative overflow-hidden">
             {/* Header */}
             <div className="flex items-center gap-3 mb-4">
@@ -37,7 +37,7 @@ const ShowcaseCard3 = () => {
             {/* Subtle background effect */}
             <div className="absolute inset-0 bg-gradient-to-br from-blue-800/5 to-neutral-900/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl" />
         </div>
-    );
-};
-
+    </Link>
+);  
+}
 export default ShowcaseCard3;
