@@ -29,120 +29,118 @@ const page = () => {
             icon: <Code size={20} className="text-neutral-300" />,
             title: "Technical Skills",
             description:
-                "MERN Stack, Next.js, TypeScript, PostgreSQL, MongoDB, Git, DevOps, and modern web technologies.",
+                "MERN Stack, Next.js, TypeScript, Python, PostgreSQL, MongoDB, Git, FastAPI, and modern web technologies.",
         },
         {
             icon: <Heart size={20} className="text-neutral-300" />,
             title: "Interests",
             description:
-                "Exploring cutting-edge technologies, Web3 development, DevOps practices, and Generative AI applications.",
+                "Diving into Open Source, Web3 development, DevOps practices, and Generative AI.",
         },
         {
             icon: <Briefcase size={20} className="text-neutral-300" />,
             title: "Experience",
             description:
-                "Full Stack Developer with expertise in backend development, API design, database architecture, and system integration.",
+                "Full stack developer and open source contributor. Worked on diverse projects, honing skills in building robust web applications.",
         },
     ];
 
     return (
-        <div className="min-h-screen flex flex-col items-center justify-center max-w-4xl mx-auto px-4 py-24">
-            {/* Background Pattern */}
-            <GridPattern
-                width={50}
-                height={50}
-                x={-1}
-                y={-1}
-                strokeDasharray={"4 2"}
-                className={cn(
-                    "[mask-image:radial-gradient(600px_circle_at_center,white,transparent)] absolute inset-0 w-full h-full opacity-30"
-                )}
-            />
+      <div className="min-h-screen flex flex-col items-center justify-center max-w-4xl mx-auto px-4 py-24">
+        {/* Background Pattern */}
+        <GridPattern
+          width={50}
+          height={50}
+          x={-1}
+          y={-1}
+          strokeDasharray={"4 2"}
+          className={cn(
+            "[mask-image:radial-gradient(600px_circle_at_center,white,transparent)] absolute inset-0 w-full h-full opacity-30"
+          )}
+        />
 
-            {/* Header Section */}
-            <div className="text-center mb-12 relative z-10">
-                <div className="flex justify-center gap-3 mb-6">
-                    <div className="flex items-center gap-2 bg-neutral-900 px-4 py-2 rounded-full border border-neutral-800 text-sm">
-                        <MapPin size={14} className="text-neutral-400" />
-                        <span className="text-neutral-300">Based in India</span>
-                    </div>
-                    <div className="flex items-center gap-2 bg-neutral-900 px-4 py-2 rounded-full border border-neutral-800 text-sm">
-                        <CircleDot size={14} className="text-green-400" />
-                        <span className="text-neutral-300">Open to Work</span>
-                    </div>
-                </div>
-
-                <h1 className="text-4xl md:text-5xl font-bold text-neutral-200 mb-6">
-                    About Me
-                </h1>
-
-                <p className="text-neutral-400 text-lg leading-relaxed max-w-3xl mx-auto mb-8">
-                    I&apos;m Piyush, a Software Engineer and Full Stack Developer
-                    specializing in backend development. With a strong
-                    foundation in building robust, scalable applications, I
-                    excel at designing APIs, architecting databases, and
-                    integrating complex systems. My expertise spans the entire
-                    development lifecycle, with a focus on crafting reliable
-                    backend solutions that power seamless user experiences.
-                </p>
-
-                <Link
-                    href="https://drive.google.com/file/d/1sjgROFLMxgDNG09ubRQpVz8e5icQ4mC2/view?usp=drivesdk"
-                    target="_blank"
-                    className="inline-flex items-center gap-2 bg-neutral-800 hover:bg-neutral-700 text-neutral-200 px-6 py-3 rounded-lg transition-all duration-300 border border-neutral-700 hover:border-neutral-600"
-                >
-                    <Download size={16} />
-                    Download Resume
-                </Link>
+        {/* Header Section */}
+        <div className="text-center mb-12 relative z-10">
+          <div className="flex justify-center gap-3 mb-6">
+            <div className="flex items-center gap-2 bg-neutral-900 px-4 py-2 rounded-full border border-neutral-800 text-sm">
+              <MapPin size={14} className="text-neutral-400" />
+              <span className="text-neutral-300">Based in India</span>
             </div>
-
-            {/* Main Content Grid */}
-            <div className="grid md:grid-cols-2 gap-6 w-full mb-12 relative z-10">
-                {aboutItems.map((item, index) => (
-                    <div
-                        key={index}
-                        className="bg-neutral-900 rounded-xl p-6 shadow-xl border border-neutral-800 hover:border-neutral-700 transition-all duration-300"
-                    >
-                        <div className="flex items-center gap-3 mb-4">
-                            <div className="p-2 bg-neutral-800 rounded-lg">
-                                {item.icon}
-                            </div>
-                            <h3 className="text-lg font-semibold text-neutral-200">
-                                {item.title}
-                            </h3>
-                        </div>
-                        <p className="text-neutral-400 text-sm leading-relaxed">
-                            {item.description}
-                        </p>
-                    </div>
-                ))}
+            <div className="flex items-center gap-2 bg-neutral-900 px-4 py-2 rounded-full border border-neutral-800 text-sm">
+              <CircleDot size={14} className="text-green-400" />
+              <span className="text-neutral-300">Open to Work</span>
             </div>
+          </div>
 
-            {/* Skills & Tools Section */}
-            <div className="w-full space-y-6 relative z-10">
-                <div className="text-center">
-                    <h2 className="text-2xl font-bold text-neutral-200 mb-2">
-                        Skills & Tools
-                    </h2>
-                    <p className="text-neutral-400">
-                        Technologies and tools I work with daily
-                    </p>
-                </div>
+          <h1 className="text-4xl md:text-5xl font-bold text-neutral-200 mb-6">
+            About Me
+          </h1>
 
-                <div className="grid md:grid-cols-2 gap-6">
-                    <ShowcaseCard3 />
-                    <ShowcaseCard4 />
-                </div>
-            </div>
+          <p className="text-neutral-400 text-lg leading-relaxed max-w-3xl mx-auto mb-8">
+            I&apos;m Piyush, a Software Engineer and Full Stack Developer
+            specializing in backend development. With a strong foundation in
+            building robust, scalable applications, I excel at designing APIs,
+            architecting databases, and integrating complex systems. My
+            expertise spans the entire development lifecycle, with a focus on
+            crafting reliable backend solutions that power seamless user
+            experiences.
+          </p>
 
-            {/* Footer */}
-            <div className="text-center mt-12 relative z-10">
-                <p className="text-neutral-500 text-sm">
-                    Always excited to collaborate on interesting projects and
-                    explore new technologies.
-                </p>
-            </div>
+          <Link
+            href="https://drive.google.com/file/d/1BPbT87gXdKHbFDvk5i2es6MsLiayTvuW/view?usp=sharing"
+            target="_blank"
+            className="inline-flex items-center gap-2 bg-neutral-800 hover:bg-neutral-700 text-neutral-200 px-6 py-3 rounded-lg transition-all duration-300 border border-neutral-700 hover:border-neutral-600"
+          >
+            <Download size={16} />
+            Download Resume
+          </Link>
         </div>
+
+        {/* Main Content Grid */}
+        <div className="grid md:grid-cols-2 gap-6 w-full mb-12 relative z-10">
+          {aboutItems.map((item, index) => (
+            <div
+              key={index}
+              className="bg-neutral-900 rounded-xl p-6 shadow-xl border border-neutral-800 hover:border-neutral-700 transition-all duration-300"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2 bg-neutral-800 rounded-lg">{item.icon}</div>
+                <h3 className="text-lg font-semibold text-neutral-200">
+                  {item.title}
+                </h3>
+              </div>
+              <p className="text-neutral-400 text-sm leading-relaxed">
+                {item.description}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Skills & Tools Section */}
+        <div className="w-full space-y-6 relative z-10">
+          <div className="text-center">
+            <h2 className="text-2xl font-bold text-neutral-200 mb-2">
+              Skills & Tools
+            </h2>
+            <p className="text-neutral-400">
+              Technologies and tools I work with daily
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <ShowcaseCard3 />
+            <ShowcaseCard4 />
+          </div>
+        </div>
+
+        {/* Footer */}
+        <div className="text-center mt-12 relative z-10">
+          <p className="text-neutral-500 text-sm">
+            Always excited to collaborate on interesting projects and explore
+            new technologies.
+          </p>
+        </div>
+      </div>
     );
 };
 

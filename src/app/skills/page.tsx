@@ -82,96 +82,111 @@ const Frontend = [
 ];
 
 const Backend = [
-    {
-        icon: (
-            <Image
-                src="/Icons/node.svg"
-                alt="Node.js"
-                width={35}
-                height={35}
-                className="rounded-xl"
-                loading="lazy"
-            />
-        ),
-        title: "Node.js",
-        description: "Javascript runtime built on Chrome's V8 engine",
-        tags: ["Javascript", "Chrome's V8 engine"],
-    },
-    {
-        icon: (
-            <Image
-                src="/Icons/express.svg"
-                alt="Express.js"
-                width={35}
-                height={35}
-                className="rounded-xl"
-                loading="lazy"
-            />
-        ),
-        title: "Express.js",
-        description: "Web application framework for Node.js",
-        tags: ["http servers", "Node.js"],
-    },
-    {
-        icon: (
-            <Image
-                src="/Icons/mongo.svg"
-                alt="MongoDB"
-                width={35}
-                height={35}
-                className="rounded-xl"
-                loading="lazy"
-            />
-        ),
-        title: "MongoDB",
-        description: "NoSQL/Non-Relational Database",
-        tags: ["NoSQL", "MongoDB Atlas"],
-    },
-    {
-        icon: (
-            <Image
-                src="/Icons/postgres.svg"
-                alt="PostgreSQL"
-                width={35}
-                height={35}
-                className="rounded-xl"
-                loading="lazy"
-            />
-        ),
-        title: "PostgreSQL",
-        description: "Relational Database",
-        tags: ["Relational", "Neon"],
-    },
-    {
-        icon: (
-            <Image
-                src="/Icons/prisma.svg"
-                alt="Prisma"
-                width={35}
-                height={35}
-                className="rounded-xl"
-                loading="lazy"
-            />
-        ),
-        title: "Prisma",
-        description: "ORM and PostgreSQL",
-        tags: ["ORM", "PostgreSQL"],
-    },
-    {
-        icon: (
-            <Image
-                src="/Icons/socket.svg"
-                alt="Socket.io"
-                width={35}
-                height={35}
-                className="rounded-xl"
-                loading="lazy"
-            />
-        ),
-        title: "Socket.io",
-        description: "Real-time communication technologies",
-        tags: ["WebSockets", "WebRTC"],
-    },
+  {
+    icon: (
+      <Image
+        src="/Icons/node.svg"
+        alt="Node.js"
+        width={35}
+        height={35}
+        className="rounded-xl"
+        loading="lazy"
+      />
+    ),
+    title: "Node.js",
+    description: "Javascript runtime built on Chrome's V8 engine",
+    tags: ["Javascript", "Chrome's V8 engine"],
+  },
+  {
+    icon: (
+      <Image
+        src="/Icons/express.svg"
+        alt="Express.js"
+        width={35}
+        height={35}
+        className="rounded-xl"
+        loading="lazy"
+      />
+    ),
+    title: "Express.js",
+    description: "Web application framework for Node.js",
+    tags: ["http servers", "Node.js"],
+  },
+  {
+    icon: (
+      <Image
+        src="/Icons/mongo.svg"
+        alt="MongoDB"
+        width={35}
+        height={35}
+        className="rounded-xl"
+        loading="lazy"
+      />
+    ),
+    title: "MongoDB",
+    description: "NoSQL/Non-Relational Database",
+    tags: ["NoSQL", "MongoDB Atlas"],
+  },
+  {
+    icon: (
+      <Image
+        src="/Icons/postgres.svg"
+        alt="PostgreSQL"
+        width={35}
+        height={35}
+        className="rounded-xl"
+        loading="lazy"
+      />
+    ),
+    title: "PostgreSQL",
+    description: "Relational Database",
+    tags: ["Relational", "Neon"],
+  },
+  {
+    icon: (
+      <Image
+        src="/Icons/prisma.svg"
+        alt="Prisma"
+        width={35}
+        height={35}
+        className="rounded-xl"
+        loading="lazy"
+      />
+    ),
+    title: "Prisma",
+    description: "ORM and PostgreSQL",
+    tags: ["ORM", "PostgreSQL"],
+  },
+  {
+    icon: (
+      <Image
+        src="/Icons/socket.svg"
+        alt="Socket.io"
+        width={35}
+        height={35}
+        className="rounded-xl"
+        loading="lazy"
+      />
+    ),
+    title: "Socket.io",
+    description: "Real-time communication technologies",
+    tags: ["WebSockets", "WebRTC"],
+  },
+  {
+    icon: (
+      <Image
+        src="/Icons/FastAPI.svg"
+        alt="FastAPI"
+        width={35}
+        height={35}
+        className="rounded-xl"
+        loading="lazy"
+      />
+    ),
+    title: "FastAPI",
+    description: "Fast and high-performance web framework for building APIs with Python",
+    tags: ["Python", "API", "Routing"],
+  },
 ];
 
 const Tools = [
