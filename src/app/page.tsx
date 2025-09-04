@@ -5,7 +5,7 @@ import { CopyEmail } from "@/components/CopyMail";
 import ShowcaseCard2 from "@/components/showcaseCard2";
 import ShowcaseCard3 from "@/components/ShowcaseCard3";
 import { ContainerTextFlip } from "@/components/ui/container-text-flip";
-import { motion } from "motion/react";
+import { motion, easeOut } from "motion/react";
 import CardDemo from "@/components/cards-demo-3";
 import { GridPattern } from "@/components/magicui/grid-pattern";
 import { Download, MapPin } from "lucide-react";
@@ -18,7 +18,7 @@ const containerVariants = {
         transition: {
             staggerChildren: 0.2,
             duration: 1,
-            ease: [0.22, 1, 0.36, 1],
+            ease: easeOut,
         },
     },
 };
@@ -30,7 +30,7 @@ const itemVariants = {
         y: 0,
         transition: {
             duration: 0.6,
-            ease: [0.22, 1, 0.36, 1],
+            ease: easeOut,
         },
     },
 };
