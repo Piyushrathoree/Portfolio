@@ -8,7 +8,7 @@ const page = () => {
             title: "Welth",
             description: "An AI - powered finance management platform",
             video: "/welth.mp4",
-            link: "https://welth-ai-finance-app-eight.vercel.app/",
+            link: "https://welth-ai-finance-app-liard.vercel.app/",
             github: "https://github.com/Piyushrathoree/Welth-ai-finance-app",
             tags: [
                 "React",
