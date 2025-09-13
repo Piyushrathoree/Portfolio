@@ -87,7 +87,7 @@ const page = () => {
           </p>
 
           <Link
-            href="https://drive.google.com/file/d/1BPbT87gXdKHbFDvk5i2es6MsLiayTvuW/view?usp=sharing"
+            href="https://drive.google.com/file/d/1drEBKXJ4wzrRw7JWC3HqrDcrvvi9Jbow/view?usp=sharing"
             target="_blank"
             className="inline-flex items-center gap-2 bg-neutral-800 hover:bg-neutral-700 text-neutral-200 px-6 py-3 rounded-lg transition-all duration-300 border border-neutral-700 hover:border-neutral-600"
           >
