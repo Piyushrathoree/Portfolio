@@ -4,7 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { NavDock } from "@/components/NavDock";
 import Footer from "@/components/Footer";
-
+import Script from 'next/script'
 // import { HomeIcon, Mail, Pen, User } from "lucide-react";
 
 const raleway = Raleway({
@@ -42,6 +42,12 @@ export default function RootLayout({
                     </div>
                 </main>
                 <Footer />
+                <Script
+  src="https://t.raah.dev/script.js"
+  data-pid="proj_jzay4segfezvrbpo"
+  data-domain="piyushrathore.vercel.app"
+  strategy="afterInteractive"
+/>
             </body>
         </html>
     );
