@@ -44,8 +44,8 @@ export default function RootLayout({
                 <Footer />
                 <Script
   src="https://t.raah.dev/script.js"
-  data-pid="proj_jzay4segfezvrbpo"
-  data-domain="piyushrathore.vercel.app"
+  data-pid="proj_m5g8oiy0p7b2u4w8"
+  data-domain="piyushh.me"
   strategy="afterInteractive"
 />
             </body>
