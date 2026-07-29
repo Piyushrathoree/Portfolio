@@ -42,10 +42,11 @@ export default function RootLayout({
                     </div>
                 </main>
                 <Footer />
-                <Script
+
+<Script
   src="https://t.raah.dev/script.js"
-  data-pid="proj_m5g8oiy0p7b2u4w8"
-  data-domain="piyushh.me"
+  data-pid="proj_34u15uuj6dtflpt8"
+  data-domain="piyush.social"
   strategy="afterInteractive"
 />
             </body>
