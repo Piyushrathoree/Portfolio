@@ -43,10 +43,12 @@ export default function RootLayout({
                 </main>
                 <Footer />
 
+
+
 <Script
   src="https://t.raah.dev/script.js"
-  data-pid="proj_34u15uuj6dtflpt8"
-  data-domain="piyush.social"
+  data-pid="proj_ndpuhv4h7c04kfgj"
+  data-domain="piyushrathore.vercel.app"
   strategy="afterInteractive"
 />
             </body>
