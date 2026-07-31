@@ -55,7 +55,7 @@ export default function RootLayout({
 
 <Script
   src="https://t.raah.dev/script.js"
-  data-pid="proj_ezw5kya2gwq1vv01"
+  data-pid="proj_ndpuhv4h7c04kfgj"
   data-domain="piyushrathore.vercel.app"
   strategy="afterInteractive"
 />
