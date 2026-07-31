@@ -16,6 +16,8 @@ export interface ContainerTextFlipProps {
   textClassName?: string;
   /** Duration of the transition animation in milliseconds */
   animationDuration?: number;
+  /** Skip blur/fade-in on the first word so LCP text is visible before hydration */
+  skipInitialAnimation?: boolean;
 }
 
 export function ContainerTextFlip({
@@ -24,11 +26,13 @@ export function ContainerTextFlip({
   className,
   textClassName,
   animationDuration = 700,
+  skipInitialAnimation = false,
 }: ContainerTextFlipProps) {
   const id = useId();
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [width, setWidth] = useState(100);
   const textRef = useRef<HTMLDivElement>(null);
+  const hasAnimatedRef = useRef(false);
 
   // Memoized function to update width
   const updateWidthForWord = useCallback(() => {
@@ -46,10 +50,14 @@ export function ContainerTextFlip({
   // Cycle through words at the given interval
   useEffect(() => {
     const intervalId = setInterval(() => {
+      hasAnimatedRef.current = true;
       setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
     }, interval);
     return () => clearInterval(intervalId);
   }, [words.length, interval]);
+
+  const shouldAnimateLetters =
+    !skipInitialAnimation || hasAnimatedRef.current;
 
   return (
     <motion.div
@@ -80,10 +88,11 @@ export function ContainerTextFlip({
           {words[currentWordIndex].split("").map((letter, index) => (
             <motion.span
               key={index}
-              initial={{
-                opacity: 0,
-                filter: "blur(10px)",
-              }}
+              initial={
+                shouldAnimateLetters
+                  ? { opacity: 0, filter: "blur(10px)" }
+                  : false
+              }
               animate={{
                 opacity: 1,
                 filter: "blur(0px)",
