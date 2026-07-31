@@ -4,7 +4,7 @@ import React, { useRef, useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { Github, ExternalLink } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import Image from "next/image";
 
 interface CardProps {

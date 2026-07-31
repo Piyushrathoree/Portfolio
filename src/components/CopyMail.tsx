@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 
 import { Copy, CopyCheck } from "lucide-react";
-import { ConfettiButton } from "./magicui/confetti";
 
 const EMAIL = "01piyush008@gmail.com";
 
@@ -36,24 +35,23 @@ export function CopyEmail() {
 
   return (
     <div className="flex items-center gap-2">
-      <ConfettiButton>
-        <div
-          onClick={handleCopy}
-          className="px-4 py-[7px] rounded-md border hover:scale-105 duration-300 border-neutral-700 bg-neutral-800 text-white hover:bg-neutral-900 transition"
-        >
-          <span className="flex items-center gap-2">
-            {copied ? (
-              <>
-                <CopyCheck /> Copied !!
-              </>
-            ) : (
-              <>
-                <Copy /> Email
-              </>
-            )}
-          </span>
-        </div>
-      </ConfettiButton>
+      <button
+        type="button"
+        onClick={handleCopy}
+        className="px-4 py-[7px] rounded-md border hover:scale-105 duration-300 border-neutral-700 bg-neutral-800 text-white hover:bg-neutral-900 transition"
+      >
+        <span className="flex items-center gap-2">
+          {copied ? (
+            <>
+              <CopyCheck /> Copied !!
+            </>
+          ) : (
+            <>
+              <Copy /> Email
+            </>
+          )}
+        </span>
+      </button>
     </div>
   );
 }
