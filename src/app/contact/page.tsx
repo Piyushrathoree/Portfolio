@@ -33,7 +33,7 @@ const page = () => {
     ];
 
     return (
-        <div className="min-h-screen flex flex-col items-center justify-center max-w-4xl mx-auto px-4 py-24">
+        <div className="contact-page-root min-h-screen flex flex-col items-center justify-center max-w-4xl mx-auto px-4 py-24">
             {/* Background Pattern */}
             <GridPattern
                 width={50}
