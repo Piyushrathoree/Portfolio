@@ -157,3 +157,12 @@ input:-webkit-autofill:active {
   transition: background-color 5000s ease-in-out 0s;
   /* background-color: #292828 !important; */
 }
+
+@media (max-width: 767px) {
+  body:has(.contact-page-root) footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}

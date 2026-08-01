@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Raleway } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import { NavDock } from "@/components/NavDock";
+import { DeferredNavDock } from "@/components/deferred-nav-dock";
 import Footer from "@/components/Footer";
 import Script from 'next/script'
 // import { HomeIcon, Mail, Pen, User } from "lucide-react";
@@ -38,7 +38,7 @@ export default function RootLayout({
                 <main className="flex-1">
                     <div className="w-full h-full font-custom">
                         {children}
-                        <NavDock />
+                        <DeferredNavDock />
                     </div>
                 </main>
                 <Footer />
